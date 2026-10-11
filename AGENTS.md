@@ -136,3 +136,22 @@ illustrative cutoff derived from model predictions, not a separate modeling trac
 - 2026-10-11: Posit Assistant (Claude, mixed model tiers — Sonnet for workflow/code,
   used for summarizing the kickoff deck, project setup, data structural checks, and
   reviewing/correcting an externally-drafted tidymodels technical plan).
+
+## My task scope (Shiny evaluation app) — 2026-10-11
+- My deliverable is specifically the evaluation/scoring Shiny app, not the EDA or
+  per-arm modeling — other team members own that and will produce the model outputs.
+- Built last, once teammates' per-arm results (scoreboard tables, fitted coefficients/
+  importance) are ready to plug in.
+- Scope follows slides 70-82: ML tail (permutation importance, SHAP, slide 71-73) +
+  full Assessment & Evaluation Metrics section (slides 75-82).
+- App panels:
+  1. Scoreboard per arm: RMSE/MAE/R², untuned vs tuned, same test patients (slide 80).
+  2. Covariates included: covariate-model coefficients vs ML importance, side by side,
+     overlap = cross-validated signal (slides 72-73, 81).
+  3. ROC curve as a secondary panel only: continuous outcome is primary (RMSE/MAE/R²,
+     slide 76); ROC/AUC doesn't apply directly to a continuous outcome, so it's shown
+     on the *derived* binary responder cutoff from the continuous model's predictions,
+     clearly labeled as secondary/illustrative (ties to the binary-label decision above).
+- Not pushing to the shared repo until explicitly told to. Branch `setup/project-scaffold`
+  stays local for now; connection to the repo is confirmed working (clone + push dry-run OK).
+- Plan to publish (e.g. Posit Connect) later, deferred a few days per user.
