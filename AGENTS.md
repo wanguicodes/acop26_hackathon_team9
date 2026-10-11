@@ -155,3 +155,17 @@ illustrative cutoff derived from model predictions, not a separate modeling trac
 - Not pushing to the shared repo until explicitly told to. Branch `setup/project-scaffold`
   stays local for now; connection to the repo is confirmed working (clone + push dry-run OK).
 - Plan to publish (e.g. Posit Connect) later, deferred a few days per user.
+
+## App format superseded — 2026-10-11 (later same day)
+- Switched from Shiny app to a **Quarto Dashboard** (plotly for interactivity, likely
+  Observable JS for the arm selector — no R/Shiny backend needed). Simpler to publish
+  as a static site; no live server required for judges to view it.
+- ROC curve dropped entirely — continuous outcome only, no binary/responder view anywhere
+  in this app. (Supersedes the earlier "ROC as secondary panel" note above.)
+- Final scope, two tabs:
+  1. Model Evaluation — slide 76 (predicted-vs-observed plot) + RMSE/MAE/R² (all three)
+     + slide 81 (covariate comparison table: coefficients vs. ML importance, side by side).
+  2. Data/EDA — exploratory, arm-selectable, deliberately minimal (not a pile of filter
+     widgets). Exact content TBD (pending user confirmation: likely outcome distribution
+     + top 2-3 covariates per arm, not all 18).
+- Still waiting on teammates' per-arm model outputs before any dashboard code is written.
