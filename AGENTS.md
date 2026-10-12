@@ -58,7 +58,7 @@ illustrative cutoff derived from model predictions, not a separate modeling trac
 
 ## Workflow rules
 1. Split each arm separately, stratified by outcome (bin continuous outcome into groups), fixed seed.
-2. Seed: 7461 (proposed; confirm/override before running the actual split).
+2. Seed: 1234 — adopted from the team's shared split (wangui/split_data.R), not our own choice.
 3. Test set is locked. Use it once, for final evaluation only.
 4. All EDA after the split uses training data only.
 5. Preprocessing is fit on train only and then applied to test.
@@ -78,8 +78,12 @@ illustrative cutoff derived from model predictions, not a separate modeling trac
   modeling is settled — not before.
 
 ## Technical plan — tidymodels
-1. Split: `initial_split(strata = outcome_bin)` per arm, fixed seed, saved to
-   `data/splits/*.rds`.
+1. Split: use the team's shared split, already produced — do NOT re-split.
+   `wangui/split_data.R` -> `data/derived/split/training_shared.csv` /
+   `testing_shared.csv`. 80/20 per arm, stratified on the binary responder
+   label (coalesced across arm-specific columns), seed 1234. 398 train / 102
+   test rows total across all 3 arms. All models (ours and teammates') must
+   score against this same testing_shared.csv for the scoreboard to be valid.
 2. Recipes (tailored per model, not one-size-fits-all):
    - Elastic net: `step_normalize(all_numeric_predictors())` + `step_dummy(all_nominal_predictors())`.
    - Random forest: minimal recipe (dummy encoding only; no normalization needed).
@@ -169,3 +173,13 @@ illustrative cutoff derived from model predictions, not a separate modeling trac
      widgets). Exact content TBD (pending user confirmation: likely outcome distribution
      + top 2-3 covariates per arm, not all 18).
 - Still waiting on teammates' per-arm model outputs before any dashboard code is written.
+
+## Team update pulled — 2026-10-12
+- Fetched origin/main: Wangui pushed EDA figures/tables (`wangui/eda.R`, `wangui/eda_figures_fulldataset/`,
+  `wangui/eda_tables_fulldataset/`) and the team's shared train/test split (`wangui/split_data.R`).
+- **Adopted the shared split as the team standard** (see Workflow rules / Technical plan above,
+  updated accordingly). We do not derive our own split or use our own seed.
+- Direct push to `main` so far (no PR/branch workflow in use by teammates yet) — worth
+  surfacing to the user if a PR-based workflow is still wanted for later contributions.
+- Our own `setup/project-scaffold` branch (with this AGENTS.md) remains local, not pushed,
+  per explicit instruction.
