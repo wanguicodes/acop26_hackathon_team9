@@ -1,0 +1,10 @@
+patient_id,treatment_arm,variable,value,q1,q3,iqr,lower_bound,upper_bound,direction,fold_change_iqr
+DM1_0437,Tideglusib,albumin,5.35,4.05,4.3,0.25,3.3,5.05,above Q3+3xIQR,4.199999999999999
+DM1_0285,Tideglusib,albumin,5.31,4.05,4.3,0.25,3.3,5.05,above Q3+3xIQR,4.039999999999999
+DM1_0211,Oligonucleotide,albumin,5.21,4.05,4.3,0.25,3.3,5.05,above Q3+3xIQR,3.6400000000000006
+DM1_0167,Oligonucleotide,albumin,3.14,4.05,4.3,0.25,3.3,5.05,below Q1-3xIQR,3.639999999999999
+DM1_0444,Oligonucleotide,albumin,5.2,4.05,4.3,0.25,3.3,5.05,above Q3+3xIQR,3.6000000000000014
+DM1_0288,Oligonucleotide,albumin,5.17,4.05,4.3,0.25,3.3,5.05,above Q3+3xIQR,3.4800000000000004
+DM1_0174,Tideglusib,albumin,3.18,4.05,4.3,0.25,3.3,5.05,below Q1-3xIQR,3.4799999999999986
+DM1_0032,Oligonucleotide,albumin,3.25,4.05,4.3,0.25,3.3,5.05,below Q1-3xIQR,3.1999999999999993
+DM1_0374,Oligonucleotide,albumin,3.29,4.05,4.3,0.25,3.3,5.05,below Q1-3xIQR,3.039999999999999
