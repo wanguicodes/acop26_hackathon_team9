@@ -177,7 +177,7 @@ HOW TO RUN THIS FOR A DIFFERENT ARM
 <span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(arm, <span class="st">"- training rows:"</span>, <span class="fu">nrow</span>(train_arm), <span class="st">" test rows:"</span>, <span class="fu">nrow</span>(test_arm), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Tideglusib - training rows: 131  test rows: 35 </code></pre>
+<pre><code>Mexiletine - training rows: 126  test rows: 35 </code></pre>
 </div>
 </div>
 <div class="cell">
@@ -254,8 +254,8 @@ HOW TO RUN THIS FOR A DIFFERENT ARM
 <pre><code># A tibble: 2 × 7
   arm        method        method_type tuned  rmse   mae    r2
   &lt;chr&gt;      &lt;chr&gt;         &lt;chr&gt;       &lt;lgl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
-1 Tideglusib Elastic Net   covariate   TRUE   2.87  2.34 0.322
-2 Tideglusib Random Forest ml          TRUE   2.42  1.96 0.521</code></pre>
+1 Mexiletine Elastic Net   covariate   TRUE  0.787 0.578 0.719
+2 Mexiletine Random Forest ml          TRUE  0.806 0.602 0.721</code></pre>
 </div>
 </div>
 </section>
@@ -280,20 +280,20 @@ HOW TO RUN THIS FOR A DIFFERENT ARM
 <span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>covariates_all <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(coefs, covariates_rf)</span>
 <span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>covariates_all</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 21 × 6
-   arm        method        covariate            value value_type   rank
-   &lt;chr&gt;      &lt;chr&gt;         &lt;chr&gt;                &lt;dbl&gt; &lt;chr&gt;       &lt;int&gt;
- 1 Tideglusib Elastic Net   cognitive_function -1.08   coefficient     1
- 2 Tideglusib Elastic Net   ctg_repeats         0.167  coefficient     2
- 3 Tideglusib Elastic Net   myotonia_severity   0.0347 coefficient     3
- 4 Tideglusib Elastic Net   disease_duration   -0.0102 coefficient     4
- 5 Tideglusib Random Forest cognitive_function  5.29   importance      1
- 6 Tideglusib Random Forest muscle_strength     0.819  importance      2
- 7 Tideglusib Random Forest disease_duration    0.290  importance      3
- 8 Tideglusib Random Forest myotonia_severity   0.219  importance      4
- 9 Tideglusib Random Forest pr_interval         0.160  importance      5
-10 Tideglusib Random Forest ctg_repeats         0.155  importance      6
-# ℹ 11 more rows</code></pre>
+<pre><code># A tibble: 34 × 6
+   arm        method      covariate                value value_type   rank
+   &lt;chr&gt;      &lt;chr&gt;       &lt;chr&gt;                    &lt;dbl&gt; &lt;chr&gt;       &lt;int&gt;
+ 1 Mexiletine Elastic Net myotonia_severity      -0.965  coefficient     1
+ 2 Mexiletine Elastic Net family_history_Yes     -0.229  coefficient     2
+ 3 Mexiletine Elastic Net family_history_Unknown -0.191  coefficient     3
+ 4 Mexiletine Elastic Net cognitive_function      0.151  coefficient     4
+ 5 Mexiletine Elastic Net disease_duration        0.139  coefficient     5
+ 6 Mexiletine Elastic Net sex_Male               -0.104  coefficient     6
+ 7 Mexiletine Elastic Net ctg_repeats            -0.0991 coefficient     7
+ 8 Mexiletine Elastic Net ck_level               -0.0834 coefficient     8
+ 9 Mexiletine Elastic Net smoking_status_Never   -0.0663 coefficient     9
+10 Mexiletine Elastic Net cataracts_Yes          -0.0542 coefficient    10
+# ℹ 24 more rows</code></pre>
 </div>
 </div>
 </section>
@@ -317,7 +317,7 @@ HOW TO RUN THIS FOR A DIFFERENT ARM
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Wrote results for"</span>, arm, <span class="st">"to"</span>, out_dir, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Wrote results for Tideglusib to /home/acop/acop26_hackathon_team9/deliverable/results/tideglusib </code></pre>
+<pre><code>Wrote results for Mexiletine to /home/acop/acop26_hackathon_team9/deliverable/results/mexiletine </code></pre>
 </div>
 </div>
 </section>

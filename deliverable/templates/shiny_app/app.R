@@ -65,11 +65,12 @@ server <- function(input, output, session) {
     lims <- range(c(d$observed, d$predicted), na.rm = TRUE)
     p <- ggplot(d, aes(x = observed, y = predicted, color = method)) +
       geom_abline(slope = 1, intercept = 0, linetype = "dashed", color = "grey50") +
-      geom_point(alpha = 0.7) +
-      coord_equal(xlim = lims, ylim = lims) +
+      geom_point(alpha = 0.75, size = 2.6) +
+      scale_x_continuous(limits = lims) +
+      scale_y_continuous(limits = lims) +
       labs(x = "Observed", y = "Predicted", color = "Method") +
-      theme_minimal()
-    ggplotly(p)
+      theme_minimal(base_size = 13)
+    ggplotly(p, height = 430) |> layout(autosize = TRUE, margin = list(t = 10))
   })
 
   output$scoreboard <- renderDT({
