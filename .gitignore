@@ -1,4 +1,6 @@
-.posit/assistant/
+.posit/assistant/*
+!.posit/assistant/skills/
+!.posit/assistant/skills/**
 data/
 locked_test_sets/
 
