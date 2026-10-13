@@ -1,0 +1,17 @@
+{
+  "permission": {
+    "read": {
+      "*.R": "allow",
+      "*.pdf": "allow"
+    },
+    "bash": {
+      "pdftotext *": "allow",
+      "sed *": "allow",
+      "grep *": "allow",
+      "python3 *": "allow"
+    },
+    "edit": {
+      "*.R": "allow"
+    }
+  }
+}

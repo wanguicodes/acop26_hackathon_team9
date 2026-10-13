@@ -1,0 +1,8 @@
+.posit/assistant/
+data/
+locked_test_sets/
+
+.venv
+scratch/
+requirements.txt
+.gitignore

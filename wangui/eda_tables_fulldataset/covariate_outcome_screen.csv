@@ -1,0 +1,19 @@
+Covariate,Type,Test,Mexiletine,Oligonucleotide,Tideglusib
+Age (years),Continuous,Spearman rho (p),0.50 (p=<0.001) *,-0.05 (p=0.529),-0.28 (p=<0.001) *
+Age at onset (years),Continuous,Spearman rho (p),0.49 (p=<0.001) *,-0.15 (p=0.045) *,-0.20 (p=0.010) *
+Disease duration (years),Continuous,Spearman rho (p),0.23 (p=0.003) *,0.19 (p=0.011) *,-0.16 (p=0.036) *
+CTG repeats,Continuous,Spearman rho (p),-0.73 (p=<0.001) *,0.44 (p=<0.001) *,0.29 (p=<0.001) *
+Somatic mosaicism index (0-1),Continuous,Spearman rho (p),-0.44 (p=<0.001) *,0.30 (p=<0.001) *,0.22 (p=0.003) *
+Myotonia severity (0-10),Continuous,Spearman rho (p),-0.84 (p=<0.001) *,0.38 (p=<0.001) *,0.29 (p=<0.001) *
+Muscle strength (20-100),Continuous,Spearman rho (p),-0.01 (p=0.896),-0.23 (p=0.002) *,0.02 (p=0.828)
+Cognitive function (z-score),Continuous,Spearman rho (p),0.23 (p=0.004) *,0.02 (p=0.776),-0.63 (p=<0.001) *
+CK (U/L),Continuous,Spearman rho (p),0.05 (p=0.507),0.01 (p=0.908),-0.00 (p=0.964)
+PR interval (ms),Continuous,Spearman rho (p),0.02 (p=0.784),0.06 (p=0.430),-0.14 (p=0.061)
+Insulin resistance (HOMA-IR),Continuous,Spearman rho (p),0.16 (p=0.040) *,0.17 (p=0.031) *,-0.00 (p=0.983)
+Albumin (g/dL),Continuous,Spearman rho (p),constant (no variance),-0.04 (p=0.626),-0.02 (p=0.776)
+BMI (kg/m2),Continuous,Spearman rho (p),0.06 (p=0.432),-0.00 (p=0.958),0.01 (p=0.848)
+Sex,Categorical,Kruskal-Wallis (p),p=0.005 *,p=0.918,p=0.706
+Phenotype,Categorical,Kruskal-Wallis (p),p=<0.001 *,p=0.003 *,p=0.003 *
+Family history,Categorical,Kruskal-Wallis (p),p=0.733,p=0.037 *,p=0.937
+Cataracts,Categorical,Kruskal-Wallis (p),p=0.019 *,p=0.558,p=0.824
+Smoking status,Categorical,Kruskal-Wallis (p),p=0.817,p=0.725,p=0.878
