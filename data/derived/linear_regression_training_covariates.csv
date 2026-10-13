@@ -1,0 +1,10 @@
+treatment_arm,outcome,covariate
+Mexiletine,myotonia_change_12wk,myotonia_severity
+Oligonucleotide,qmt_change_26wk,ctg_repeats
+Oligonucleotide,qmt_change_26wk,cognitive_function
+Oligonucleotide,qmt_change_26wk,family_history
+Tideglusib,tideglusib_composite,cognitive_function
+Tideglusib,tideglusib_composite,cataracts
+Tideglusib,tideglusib_composite,age
+Tideglusib,tideglusib_composite,age_at_onset
+Tideglusib,tideglusib_composite,muscle_strength

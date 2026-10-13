@@ -1,0 +1,20 @@
+treatment_arm,phase,step,covariate,p_value,threshold,action
+Mexiletine,forward,1,myotonia_severity,1.29072602948632e-31,0.5,added
+Mexiletine,forward,2,cognitive_function,0.16368600729497865,0.5,added
+Mexiletine,forward,3,family_history,0.1307768714115152,0.5,added
+Mexiletine,forward,4,sex,0.18213281236891285,0.5,added
+Mexiletine,forward,5,pr_interval,0.22293420398851807,0.5,added
+Mexiletine,forward,6,ck_level,0.28679185753193315,0.5,added
+Mexiletine,forward,7,muscle_strength,0.3245644863642696,0.5,added
+Mexiletine,forward,8,cataracts,0.4586239673329847,0.5,added
+Mexiletine,forward,9,ctg_repeats,0.43274854702697585,0.5,added
+Mexiletine,forward,10,smoking_status,0.5458530936349081,0.5,stop (none p < 0.01)
+Mexiletine,backward,1,ctg_repeats,0.43274854702697585,0.1,removed
+Mexiletine,backward,2,cataracts,0.45862396733299005,0.1,removed
+Mexiletine,backward,3,pr_interval,0.4262561316036948,0.1,removed
+Mexiletine,backward,4,ck_level,0.2152330740337208,0.1,removed
+Mexiletine,backward,5,muscle_strength,0.23275086372407958,0.1,removed
+Mexiletine,backward,6,sex,0.18213281236891285,0.1,removed
+Mexiletine,backward,7,family_history,0.13077687141151356,0.1,removed
+Mexiletine,backward,8,cognitive_function,0.16368600729497865,0.1,removed
+Mexiletine,backward,9,myotonia_severity,1.2907260294863568e-31,0.1,stop (all p < 0.001)

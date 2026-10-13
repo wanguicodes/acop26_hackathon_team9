@@ -1,0 +1,18 @@
+treatment_arm,phase,step,covariate,p_value,threshold,action
+Oligonucleotide,forward,1,ctg_repeats,1.0207425273632808e-7,0.5,added
+Oligonucleotide,forward,2,cognitive_function,0.025400933169410854,0.5,added
+Oligonucleotide,forward,3,family_history,0.05609415933108224,0.5,added
+Oligonucleotide,forward,4,sex,0.163337605108008,0.5,added
+Oligonucleotide,forward,5,age,0.21400785077045295,0.5,added
+Oligonucleotide,forward,6,ck_level,0.3532390700547223,0.5,added
+Oligonucleotide,forward,7,cataracts,0.41679799046780075,0.5,added
+Oligonucleotide,forward,8,smoking_status,0.48372256633760446,0.5,added
+Oligonucleotide,forward,9,bmi,0.4825916034390073,0.5,added
+Oligonucleotide,forward,10,insulin_resistance,0.6537889191306061,0.5,stop (none p < 0.01)
+Oligonucleotide,backward,1,bmi,0.4825916034390073,0.1,removed
+Oligonucleotide,backward,2,smoking_status,0.483722566337601,0.1,removed
+Oligonucleotide,backward,3,cataracts,0.41679799046780075,0.1,removed
+Oligonucleotide,backward,4,ck_level,0.3532390700547223,0.1,removed
+Oligonucleotide,backward,5,age,0.2140078507704551,0.1,removed
+Oligonucleotide,backward,6,sex,0.16333760510800943,0.1,removed
+Oligonucleotide,backward,7,family_history,0.05609415933108224,0.1,stop (all p < 0.001)

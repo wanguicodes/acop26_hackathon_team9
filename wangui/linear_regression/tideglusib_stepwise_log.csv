@@ -1,0 +1,16 @@
+treatment_arm,phase,step,covariate,p_value,threshold,action
+Tideglusib,forward,1,cognitive_function,3.292068717785417e-14,0.5,added
+Tideglusib,forward,2,ctg_repeats,0.006292554679684186,0.5,added
+Tideglusib,forward,3,pr_interval,0.14488199975880037,0.5,added
+Tideglusib,forward,4,ck_level,0.12911405669859924,0.5,added
+Tideglusib,forward,5,cataracts,0.17862037414507942,0.5,added
+Tideglusib,forward,6,age,0.43464373890265406,0.5,added
+Tideglusib,forward,7,age_at_onset,0.02371788965266571,0.5,added
+Tideglusib,forward,8,muscle_strength,0.011928502006127648,0.5,added
+Tideglusib,forward,9,insulin_resistance,0.4995986403603364,0.5,added
+Tideglusib,forward,10,myotonia_severity,0.7466017651909521,0.5,stop (none p < 0.01)
+Tideglusib,backward,1,insulin_resistance,0.4995986403603261,0.1,removed
+Tideglusib,backward,2,ctg_repeats,0.22864702298396655,0.1,removed
+Tideglusib,backward,3,pr_interval,0.10726858245258591,0.1,removed
+Tideglusib,backward,4,ck_level,0.12108494268598496,0.1,removed
+Tideglusib,backward,5,cataracts,0.018311915505491865,0.1,stop (all p < 0.001)
