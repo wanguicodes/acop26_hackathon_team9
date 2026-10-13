@@ -1,0 +1,3 @@
+arm,method,method_type,tuned,rmse,mae,r2
+Tideglusib,Elastic Net,covariate,TRUE,2.871468415972083,2.3413981551330076,0.32216783255224174
+Tideglusib,Random Forest,ml,TRUE,2.4198067482698087,1.9557087936507933,0.5212965422828811

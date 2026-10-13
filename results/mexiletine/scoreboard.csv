@@ -1,0 +1,3 @@
+arm,method,method_type,tuned,rmse,mae,r2
+Mexiletine,Elastic Net,covariate,TRUE,0.7865948744491805,0.5776951826078037,0.7194238246652318
+Mexiletine,Random Forest,ml,TRUE,0.8064962276642582,0.6023293414965988,0.7210884353829684

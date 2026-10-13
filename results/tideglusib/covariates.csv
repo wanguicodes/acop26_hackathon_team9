@@ -1,0 +1,22 @@
+arm,method,covariate,value,value_type,rank
+Tideglusib,Elastic Net,cognitive_function,-1.0783110083545557,coefficient,1
+Tideglusib,Elastic Net,ctg_repeats,0.16731589729836077,coefficient,2
+Tideglusib,Elastic Net,myotonia_severity,0.03470252651678883,coefficient,3
+Tideglusib,Elastic Net,disease_duration,-0.01019447339781317,coefficient,4
+Tideglusib,Random Forest,cognitive_function,5.2919924587783935,importance,1
+Tideglusib,Random Forest,muscle_strength,0.8188417942008762,importance,2
+Tideglusib,Random Forest,disease_duration,0.2904397408616012,importance,3
+Tideglusib,Random Forest,myotonia_severity,0.21915350170640235,importance,4
+Tideglusib,Random Forest,pr_interval,0.16017410323332298,importance,5
+Tideglusib,Random Forest,ctg_repeats,0.15532063402464516,importance,6
+Tideglusib,Random Forest,albumin,0.05769975078827846,importance,7
+Tideglusib,Random Forest,phenotype,0.05504258689536407,importance,8
+Tideglusib,Random Forest,bmi,0.04077133480548896,importance,9
+Tideglusib,Random Forest,age_at_onset,0.03721726653362512,importance,10
+Tideglusib,Random Forest,cataracts,0.036606451817792436,importance,11
+Tideglusib,Random Forest,somatic_mosaicism_index,0.028428025736484307,importance,12
+Tideglusib,Random Forest,sex,0.025311734364016535,importance,13
+Tideglusib,Random Forest,insulin_resistance,0.00718245167857829,importance,14
+Tideglusib,Random Forest,ck_level,-0.00942291696128712,importance,15
+Tideglusib,Random Forest,smoking_status,-0.02136536622380288,importance,16
+Tideglusib,Random Forest,family_history,-0.023999632252820084,importance,17

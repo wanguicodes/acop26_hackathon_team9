@@ -1,0 +1,3 @@
+arm,method,method_type,tuned,rmse,mae,r2
+Oligonucleotide,Elastic Net,covariate,TRUE,1.7566752229578753,1.4627592463330807,0.10765787261077216
+Oligonucleotide,Random Forest,ml,TRUE,1.665937833355927,1.3658112100638056,0.19567527127597006
