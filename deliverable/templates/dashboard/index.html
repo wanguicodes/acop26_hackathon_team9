@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>DM1 Hackathon — Team 9</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="index_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="index_files/libs/quarto-html/anchor.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="index_files/libs/bootstrap/bootstrap-acd67af9edef89a57f3e2074c43c0bb1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="index_files/libs/bootstrap/bootstrap-dark-acd67af9edef89a57f3e2074c43c0bb1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="index_files/libs/bootstrap/bootstrap-acd67af9edef89a57f3e2074c43c0bb1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="index_files/libs/quarto-dashboard/quarto-dashboard.js"></script>
+<script src="index_files/libs/quarto-dashboard/stickythead.js"></script>
+
+
+
+<script src="index_files/libs/quarto-dashboard/web-components.js" type="module"></script>
+<script src="index_files/libs/quarto-dashboard/components.js"></script>
+
+<script src="index_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="index_files/libs/plotly-binding-4.12.1/plotly.js"></script>
+<script src="index_files/libs/typedarray-0.1/typedarray.min.js"></script>
+<script src="index_files/libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="index_files/libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet">
+<script src="index_files/libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
+<link href="index_files/libs/plotly-htmlwidgets-css-2.25.2/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="index_files/libs/plotly-main-2.25.2/plotly-latest.min.js"></script>
+<link href="index_files/libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
+<link href="index_files/libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="index_files/libs/datatables-binding-0.34.0/datatables.js"></script>
+<link href="index_files/libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="index_files/libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="index_files/libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
+
+
+</head>
+
+<body class="quarto-dashboard dashboard-fill fullcontent quarto-light">
+
+<header id="quarto-dashboard-header">
+<nav class="navbar navbar-expand-md slim" data-bs-theme="dark">
+  <div class="navbar-container container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-controls="dashboard-collapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>    
+
+
+    <div class="navbar-brand-container">
+
+
+      <div class="navbar-title">
+        <div class="navbar-title-text"><a href="#">DM1 Hackathon — Team 9</a></div>
+        
+        
+      </div>
+    </div>
+<div id="dashboard-collapse" class="navbar-collapse collapse"><ul class="navbar-nav navbar-nav-scroll me-auto" role="tablist"><li class="nav-item" role="presentation"><a id="tab-model-evaluation" class="nav-link active" data-bs-toggle="tab" role="tab" data-bs-target="#model-evaluation" data-scrolling="false" href="#model-evaluation" aria-controls="model-evaluation" aria-selected="true"><span class="nav-link-text">Model Evaluation</span></a></li><li class="nav-item" role="presentation"><a id="tab-data-explorer" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#data-explorer" data-scrolling="false" href="#data-explorer" aria-controls="data-explorer" aria-selected="false"><span class="nav-link-text">Data Explorer</span></a></li></ul></div></div>
+</nav>
+</header>
+<div class="page-layout-custom quarto-dashboard-content bslib-gap-spacing html-fill-container bslib-page-fill quarto-dashboard-pages">  
+
+<!--
+WHAT THIS FILE IS
+  The evaluation dashboard. Reads from deliverable/results/<arm_slug>/{scoreboard,covariates,
+  predictions}.csv -- see .posit/assistant/skills/dm1-results-integration/SKILL.md
+  for the exact contract. Swap in real team results by writing files matching
+  that schema; nothing else here needs to change.
+
+  Render with: quarto render deliverable/templates/dashboard/index.qmd
+-->
+<div class="bslib-grid-item html-fill-item tab-content bslib-grid" data-layout="fill" style="display: grid; grid-template-rows: minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div id="model-evaluation" class="dashboard-page tab-pane show active html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-model-evaluation">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, max-content); grid-auto-columns: minmax(0, 1fr);">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="panel-tabset html-fill-item html-fill-container">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Mexiletine</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Oligonucleotide</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Tideglusib</a></li></ul>
+<div class="tab-content html-fill-item html-fill-container">
+<div id="tabset-1-1" class="tab-pane active html-fill-item html-fill-container" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="card cell html-fill-item html-fill-container bslib-card" data-title="Predicted vs. Observed (Mexiletine)" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-header"><div class="card-title"><span style="display: inline">
+Predicted vs.&nbsp;Observed (Mexiletine)
+</span></div></div>
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output-display html-fill-item html-fill-container">
+<div id="htmlwidget-bb6aa183ba059e0035f1" style="width:100%;height:363px;" class="plotly html-widget html-fill-item html-fill-container"></div>
+<script type="application/json" data-for="htmlwidget-bb6aa183ba059e0035f1">{"x":{"data":[{"x":[-7.2902333098109144,0.85489950602919906],"y":[-7.2902333098109144,0.85489950602919906],"text":"intercept: 0<br />slope: 1","type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(127,127,127,1)","dash":"dash"},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[-0.14999999999999999,-1.3999999999999999,-2.9100000000000001,-1.26,-1.0600000000000001,-2.8399999999999999,-6.9199999999999999,-2.8599999999999999,-1.51,-2.1000000000000001,-2.3399999999999999,-1.72,-1.48,-5,-0.14000000000000001,-3.52,-0.37,-3.1899999999999999,-1.5700000000000001,-3.6600000000000001,-2.1600000000000001,-0.52000000000000002,-2.7200000000000002,-4.8499999999999996,-1.6000000000000001,-0.67000000000000004,-1.77,-0.70999999999999996,-1.1100000000000001,-0.32000000000000001,-0.93999999999999995,-2.1000000000000001,-1.0800000000000001,-2.2400000000000002,-0.75],"y":[0.3452003825752688,-2.0466896028326227,-3.7346635129918591,-2.3826219672690758,-1.6735889079820705,-2.6314247249201919,-4.1773066424361547,-2.7551090423900013,-2.0465353078547741,-3.3893728700281098,-3.1235439612931222,-1.8533769063582497,-1.1228911519632088,-3.8661712213311672,-0.14807058586427355,-3.0876382878572293,-0.47006637730887901,-2.2482758526141144,-0.68874405374681502,-3.2351300857321013,-2.3245620705458405,-0.44955875400068129,-2.4963177974893158,-3.5328677280161265,-1.6837549831015592,-1.0279011116748924,-1.448822769146082,-1.1997255011826284,-1.2098522456742355,0.48466619621828472,-0.3069833886342499,-1.4024541274899722,-1.0331221035270854,-3.3444444639430619,-0.72648783213117918],"text":["observed: -0.15<br />predicted:  0.3452004<br />method: Elastic Net","observed: -1.40<br />predicted: -2.0466896<br />method: Elastic Net","observed: -2.91<br />predicted: -3.7346635<br />method: Elastic Net","observed: -1.26<br />predicted: -2.3826220<br />method: Elastic Net","observed: -1.06<br />predicted: -1.6735889<br />method: Elastic Net","observed: -2.84<br />predicted: -2.6314247<br />method: Elastic Net","observed: -6.92<br />predicted: -4.1773066<br />method: Elastic Net","observed: -2.86<br />predicted: -2.7551090<br />method: Elastic Net","observed: -1.51<br />predicted: -2.0465353<br />method: Elastic Net","observed: -2.10<br />predicted: -3.3893729<br />method: Elastic Net","observed: -2.34<br />predicted: -3.1235440<br />method: Elastic Net","observed: -1.72<br />predicted: -1.8533769<br />method: Elastic Net","observed: -1.48<br />predicted: -1.1228912<br />method: Elastic Net","observed: -5.00<br />predicted: -3.8661712<br />method: Elastic Net","observed: -0.14<br />predicted: -0.1480706<br />method: Elastic Net","observed: -3.52<br />predicted: -3.0876383<br />method: Elastic Net","observed: -0.37<br />predicted: -0.4700664<br />method: Elastic Net","observed: -3.19<br />predicted: -2.2482759<br />method: Elastic Net","observed: -1.57<br />predicted: -0.6887441<br />method: Elastic Net","observed: -3.66<br />predicted: -3.2351301<br />method: Elastic Net","observed: -2.16<br />predicted: -2.3245621<br />method: Elastic Net","observed: -0.52<br />predicted: -0.4495588<br />method: Elastic Net","observed: -2.72<br />predicted: -2.4963178<br />method: Elastic Net","observed: -4.85<br />predicted: -3.5328677<br />method: Elastic Net","observed: -1.60<br />predicted: -1.6837550<br />method: Elastic Net","observed: -0.67<br />predicted: -1.0279011<br />method: Elastic Net","observed: -1.77<br />predicted: -1.4488228<br />method: Elastic Net","observed: -0.71<br />predicted: -1.1997255<br />method: Elastic Net","observed: -1.11<br />predicted: -1.2098522<br />method: Elastic Net","observed: -0.32<br />predicted:  0.4846662<br />method: Elastic Net","observed: -0.94<br />predicted: -0.3069834<br />method: Elastic Net","observed: -2.10<br />predicted: -1.4024541<br />method: Elastic Net","observed: -1.08<br />predicted: -1.0331221<br />method: Elastic Net","observed: -2.24<br />predicted: -3.3444445<br />method: Elastic Net","observed: -0.75<br />predicted: -0.7264878<br />method: Elastic Net"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","opacity":0.75,"size":9.8267716535433092,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(248,118,109,1)"}},"hoveron":"points","name":"Elastic Net","legendgroup":"Elastic Net","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[-0.14999999999999999,-1.3999999999999999,-2.9100000000000001,-1.26,-1.0600000000000001,-2.8399999999999999,-6.9199999999999999,-2.8599999999999999,-1.51,-2.1000000000000001,-2.3399999999999999,-1.72,-1.48,-5,-0.14000000000000001,-3.52,-0.37,-3.1899999999999999,-1.5700000000000001,-3.6600000000000001,-2.1600000000000001,-0.52000000000000002,-2.7200000000000002,-4.8499999999999996,-1.6000000000000001,-0.67000000000000004,-1.77,-0.70999999999999996,-1.1100000000000001,-0.32000000000000001,-0.93999999999999995,-2.1000000000000001,-1.0800000000000001,-2.2400000000000002,-0.75],"y":[-0.6036200000000006,-2.1961849999999976,-4.348699999999984,-2.6580649999999952,-1.5956849999999947,-2.3989649999999929,-4.2429499999999738,-2.4408849999999989,-1.6530066666666594,-3.0898792857142823,-3.0592049999999951,-1.7254199999999906,-1.0671199999999958,-3.9098499999999858,-0.68701999999999841,-2.962075,-1.1213599999999984,-2.3902349999999952,-0.87744999999999607,-2.8319639999999882,-2.1398841666666644,-0.76941999999999988,-2.8088558333333289,-3.3544249999999862,-1.7354566666666569,-1.5018049999999956,-1.4257749999999969,-1.1879766666666622,-0.96449499999999799,-0.96093499999999799,-0.92709000000000319,-1.4830049999999964,-1.1340649999999994,-2.4205099999999935,-0.65947499999999959],"text":["observed: -0.15<br />predicted: -0.6036200<br />method: Random Forest","observed: -1.40<br />predicted: -2.1961850<br />method: Random Forest","observed: -2.91<br />predicted: -4.3487000<br />method: Random Forest","observed: -1.26<br />predicted: -2.6580650<br />method: Random Forest","observed: -1.06<br />predicted: -1.5956850<br />method: Random Forest","observed: -2.84<br />predicted: -2.3989650<br />method: Random Forest","observed: -6.92<br />predicted: -4.2429500<br />method: Random Forest","observed: -2.86<br />predicted: -2.4408850<br />method: Random Forest","observed: -1.51<br />predicted: -1.6530067<br />method: Random Forest","observed: -2.10<br />predicted: -3.0898793<br />method: Random Forest","observed: -2.34<br />predicted: -3.0592050<br />method: Random Forest","observed: -1.72<br />predicted: -1.7254200<br />method: Random Forest","observed: -1.48<br />predicted: -1.0671200<br />method: Random Forest","observed: -5.00<br />predicted: -3.9098500<br />method: Random Forest","observed: -0.14<br />predicted: -0.6870200<br />method: Random Forest","observed: -3.52<br />predicted: -2.9620750<br />method: Random Forest","observed: -0.37<br />predicted: -1.1213600<br />method: Random Forest","observed: -3.19<br />predicted: -2.3902350<br />method: Random Forest","observed: -1.57<br />predicted: -0.8774500<br />method: Random Forest","observed: -3.66<br />predicted: -2.8319640<br />method: Random Forest","observed: -2.16<br />predicted: -2.1398842<br />method: Random Forest","observed: -0.52<br />predicted: -0.7694200<br />method: Random Forest","observed: -2.72<br />predicted: -2.8088558<br />method: Random Forest","observed: -4.85<br />predicted: -3.3544250<br />method: Random Forest","observed: -1.60<br />predicted: -1.7354567<br />method: Random Forest","observed: -0.67<br />predicted: -1.5018050<br />method: Random Forest","observed: -1.77<br />predicted: -1.4257750<br />method: Random Forest","observed: -0.71<br />predicted: -1.1879767<br />method: Random Forest","observed: -1.11<br />predicted: -0.9644950<br />method: Random Forest","observed: -0.32<br />predicted: -0.9609350<br />method: Random Forest","observed: -0.94<br />predicted: -0.9270900<br />method: Random Forest","observed: -2.10<br />predicted: -1.4830050<br />method: Random Forest","observed: -1.08<br />predicted: -1.1340650<br />method: Random Forest","observed: -2.24<br />predicted: -2.4205100<br />method: Random Forest","observed: -0.75<br />predicted: -0.6594750<br />method: Random Forest"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,191,196,1)","opacity":0.75,"size":9.8267716535433092,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(0,191,196,1)"}},"hoveron":"points","name":"Random Forest","legendgroup":"Random Forest","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":10,"r":8.6342880863428846,"b":44.034869240348698,"l":44.034869240348712},"paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":17.268576172685766},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-7.2902333098109144,0.85489950602919906],"tickmode":"array","ticktext":["-6","-4","-2","0"],"tickvals":[-6,-4,-2,0],"categoryorder":"array","categoryarray":["-6","-4","-2","0"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":4.3171440431714414,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":13.814860938148611},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.78493528057662576,"zeroline":false,"anchor":"y","title":{"text":"Observed","font":{"color":"rgba(0,0,0,1)","family":"","size":17.268576172685766}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-7.2902333098109144,0.85489950602919906],"tickmode":"array","ticktext":["-6","-4","-2","0"],"tickvals":[-6,-4,-2,0],"categoryorder":"array","categoryarray":["-6","-4","-2","0"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":4.3171440431714423,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":13.814860938148612},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.78493528057662576,"zeroline":false,"anchor":"x","title":{"text":"Predicted","font":{"color":"rgba(0,0,0,1)","family":"","size":17.268576172685766}},"hoverformat":".2f"},"shapes":[],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":13.814860938148611},"title":{"text":"Method","font":{"color":"rgba(0,0,0,1)","family":"","size":17.268576172685766}}},"hovermode":"closest","height":430,"barmode":"relative","autosize":true},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"3ed15acbaf00":{"intercept":{},"slope":{},"type":"scatter"},"3ed14a7450c4":{"x":{},"y":{},"colour":{}}},"cur_data":"3ed15acbaf00","visdat":{"3ed15acbaf00":["function (y) ","x"],"3ed14a7450c4":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-title="Scoreboard (Mexiletine)" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-header"><div class="card-title"><span style="display: inline">
+Scoreboard (Mexiletine)
+</span></div></div>
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output-display html-fill-item html-fill-container">
+<div class="datatables html-widget html-fill-item html-fill-container" id="htmlwidget-2b4350b4dbdec2abcc7b" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-2b4350b4dbdec2abcc7b">{"x":{"filter":"none","vertical":false,"data":[["Elastic Net","Random Forest"],["covariate","ml"],[true,true],[0.7865948744491805,0.8064962276642582],[0.5776951826078037,0.6023293414965988],[0.7194238246652318,0.7210884353829684]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Method<\/th>\n      <th>Type<\/th>\n      <th>Tuned<\/th>\n      <th>RMSE<\/th>\n      <th>MAE<\/th>\n      <th>R2<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"bPaginate":false,"dom":"t","language":{"info":"Showing _TOTAL_ entries"},"paging":false,"columnDefs":[{"targets":3,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 3, 3, \",\", \".\", null);\n  }"},{"targets":4,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 3, 3, \",\", \".\", null);\n  }"},{"targets":5,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 3, 3, \",\", \".\", null);\n  }"},{"className":"dt-right","targets":[3,4,5]},{"name":"Method","targets":0},{"name":"Type","targets":1},{"name":"Tuned","targets":2},{"name":"RMSE","targets":3},{"name":"MAE","targets":4},{"name":"R2","targets":5}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render","options.columnDefs.1.render","options.columnDefs.2.render"],"jsHooks":[]}</script>
+</div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-title="Covariates (Mexiletine)" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-header"><div class="card-title"><span style="display: inline">
+Covariates (Mexiletine)
+</span></div></div>
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output-display html-fill-item html-fill-container">
+<div class="datatables html-widget html-fill-item html-fill-container" id="htmlwidget-cc5124e08520f60635f7" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-cc5124e08520f60635f7">{"x":{"filter":"none","vertical":false,"data":[["Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest"],["myotonia_severity","family_history_Yes","family_history_Unknown","cognitive_function","disease_duration","sex_Male","ctg_repeats","ck_level","smoking_status_Never","cataracts_Yes","pr_interval","phenotype_juvenile_onset","age_at_onset","insulin_resistance","phenotype_late_onset","somatic_mosaicism_index","bmi","smoking_status_Former","myotonia_severity","ctg_repeats","phenotype","age_at_onset","somatic_mosaicism_index","cognitive_function","disease_duration","muscle_strength","insulin_resistance","family_history","cataracts","pr_interval","sex","bmi","smoking_status","ck_level"],[-0.9646627716966432,-0.228829678216553,-0.191180880591064,0.1506107654180339,0.1394593286895934,-0.1040572027148333,-0.09907782338443544,-0.08335154732043398,-0.06631843769087613,-0.05422953584738654,0.05288855360157271,0.04628525821139999,0.04178092534215651,-0.03816543998294505,-0.03690385936265492,0.02506251688094057,-0.01704331240704071,-0.00983966738738524,0.7632434056387886,0.4735905862988329,0.09340310872325172,0.05692201876042053,0.04977424227282182,0.03029726744354934,0.02959150648345401,0.02936316878669612,0.0087898470405276,0.00457209912376886,0.00429152546455166,0.00246996059939295,0.00175783486470379,0.00146222707275043,-0.00318802951564103,-0.01091722791989548],["coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance"],[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Method<\/th>\n      <th>Covariate<\/th>\n      <th>Value<\/th>\n      <th>Type<\/th>\n      <th>Rank<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"bPaginate":false,"dom":"ifrt","language":{"info":"Showing _TOTAL_ entries"},"pageLength":10,"columnDefs":[{"targets":2,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 3, 3, \",\", \".\", null);\n  }"},{"className":"dt-right","targets":[2,4]},{"name":"Method","targets":0},{"name":"Covariate","targets":1},{"name":"Value","targets":2},{"name":"Type","targets":3},{"name":"Rank","targets":4}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render"],"jsHooks":[]}</script>
+</div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+<div id="tabset-1-2" class="tab-pane html-fill-item html-fill-container" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="card cell html-fill-item html-fill-container bslib-card" data-title="Predicted vs. Observed (Oligonucleotide)" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-header"><div class="card-title"><span style="display: inline">
+Predicted vs.&nbsp;Observed (Oligonucleotide)
+</span></div></div>
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output-display html-fill-item html-fill-container">
+<div id="htmlwidget-d6eb7b0624e0ff4f935b" style="width:100%;height:363px;" class="plotly html-widget html-fill-item html-fill-container"></div>
+<script type="application/json" data-for="htmlwidget-d6eb7b0624e0ff4f935b">{"x":{"data":[{"x":[-2.0350000000000001,5.5549999999999997],"y":[-2.0350000000000001,5.5549999999999997],"text":"intercept: 0<br />slope: 1","type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(127,127,127,1)","dash":"dash"},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[-0.81999999999999995,4.8499999999999996,4.6799999999999997,2.5800000000000001,2.3999999999999999,1.1000000000000001,0.080000000000000002,0.94999999999999996,-1.6899999999999999,-1.0900000000000001,0.79000000000000004,2,0.70999999999999996,-0.17999999999999999,-0.29999999999999999,5.21,1.76,0.38,3.1899999999999999,2.8900000000000001,0.55000000000000004,1.1200000000000001,1.72,-1.4399999999999999,1.8300000000000001,0.63,0.089999999999999997,-1.3899999999999999,3.2000000000000002,1.3600000000000001,2.4900000000000002,0.69999999999999996,-1.28,4.5499999999999998,-0.20999999999999999],"y":[0.67954250145716977,1.3674231863397248,2.2261872784712806,1.7823368635902008,1.9371416512044224,0.8328738065453678,0.83652379818960942,0.0097511269724858407,0.97085086765965101,0.15710059070348739,-0.0075797609886751301,1.906175504165027,1.3447901503069752,0.53937441561857902,1.4563685657038892,1.6828160194652908,2.5035677187870968,2.7462598893288175,1.5830101808590655,1.3604481721647106,2.3988357790585795,1.9596432025278301,1.0659165901798,0.74393972530148689,0.15673769595320944,0.25311960094839908,0.20438809748678036,2.1529227921287482,1.3548994482120258,1.2695081216884982,-0.14591765994172551,2.0820864922840112,0.22736434397726793,2.9265776188622712,2.3244401358292222],"text":["observed: -0.82<br />predicted:  0.679542501<br />method: Elastic Net","observed:  4.85<br />predicted:  1.367423186<br />method: Elastic Net","observed:  4.68<br />predicted:  2.226187278<br />method: Elastic Net","observed:  2.58<br />predicted:  1.782336864<br />method: Elastic Net","observed:  2.40<br />predicted:  1.937141651<br />method: Elastic Net","observed:  1.10<br />predicted:  0.832873807<br />method: Elastic Net","observed:  0.08<br />predicted:  0.836523798<br />method: Elastic Net","observed:  0.95<br />predicted:  0.009751127<br />method: Elastic Net","observed: -1.69<br />predicted:  0.970850868<br />method: Elastic Net","observed: -1.09<br />predicted:  0.157100591<br />method: Elastic Net","observed:  0.79<br />predicted: -0.007579761<br />method: Elastic Net","observed:  2.00<br />predicted:  1.906175504<br />method: Elastic Net","observed:  0.71<br />predicted:  1.344790150<br />method: Elastic Net","observed: -0.18<br />predicted:  0.539374416<br />method: Elastic Net","observed: -0.30<br />predicted:  1.456368566<br />method: Elastic Net","observed:  5.21<br />predicted:  1.682816019<br />method: Elastic Net","observed:  1.76<br />predicted:  2.503567719<br />method: Elastic Net","observed:  0.38<br />predicted:  2.746259889<br />method: Elastic Net","observed:  3.19<br />predicted:  1.583010181<br />method: Elastic Net","observed:  2.89<br />predicted:  1.360448172<br />method: Elastic Net","observed:  0.55<br />predicted:  2.398835779<br />method: Elastic Net","observed:  1.12<br />predicted:  1.959643203<br />method: Elastic Net","observed:  1.72<br />predicted:  1.065916590<br />method: Elastic Net","observed: -1.44<br />predicted:  0.743939725<br />method: Elastic Net","observed:  1.83<br />predicted:  0.156737696<br />method: Elastic Net","observed:  0.63<br />predicted:  0.253119601<br />method: Elastic Net","observed:  0.09<br />predicted:  0.204388097<br />method: Elastic Net","observed: -1.39<br />predicted:  2.152922792<br />method: Elastic Net","observed:  3.20<br />predicted:  1.354899448<br />method: Elastic Net","observed:  1.36<br />predicted:  1.269508122<br />method: Elastic Net","observed:  2.49<br />predicted: -0.145917660<br />method: Elastic Net","observed:  0.70<br />predicted:  2.082086492<br />method: Elastic Net","observed: -1.28<br />predicted:  0.227364344<br />method: Elastic Net","observed:  4.55<br />predicted:  2.926577619<br />method: Elastic Net","observed: -0.21<br />predicted:  2.324440136<br />method: Elastic Net"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","opacity":0.75,"size":9.8267716535433092,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(248,118,109,1)"}},"hoveron":"points","name":"Elastic Net","legendgroup":"Elastic Net","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[-0.81999999999999995,4.8499999999999996,4.6799999999999997,2.5800000000000001,2.3999999999999999,1.1000000000000001,0.080000000000000002,0.94999999999999996,-1.6899999999999999,-1.0900000000000001,0.79000000000000004,2,0.70999999999999996,-0.17999999999999999,-0.29999999999999999,5.21,1.76,0.38,3.1899999999999999,2.8900000000000001,0.55000000000000004,1.1200000000000001,1.72,-1.4399999999999999,1.8300000000000001,0.63,0.089999999999999997,-1.3899999999999999,3.2000000000000002,1.3600000000000001,2.4900000000000002,0.69999999999999996,-1.28,4.5499999999999998,-0.20999999999999999],"y":[1.209848868091622,1.4027289993092231,2.190551147305821,1.6092997315885755,1.5650725522944633,0.16836766304892503,1.2197734012902699,0.70220425302545164,0.69916351087902928,0.25708914764011265,0.66448449879840887,1.2627746287469928,1.2868500361832,0.26552117470325021,0.86110337280154703,1.1296476879800248,2.0577324158906336,1.7453005463670259,1.5277040988194208,1.4089376314439073,2.1361097848095354,1.2619958357829304,1.5617896814713119,0.90472738620808124,0.33341647433802685,0.29662706806711514,0.61010022736309266,0.72834731910962069,1.727582968858131,1.4253845352385257,0.73927020046041547,1.9567755333322381,0.72611996797854417,1.9838542683787079,2.0157628424988561],"text":["observed: -0.82<br />predicted:  1.209848868<br />method: Random Forest","observed:  4.85<br />predicted:  1.402728999<br />method: Random Forest","observed:  4.68<br />predicted:  2.190551147<br />method: Random Forest","observed:  2.58<br />predicted:  1.609299732<br />method: Random Forest","observed:  2.40<br />predicted:  1.565072552<br />method: Random Forest","observed:  1.10<br />predicted:  0.168367663<br />method: Random Forest","observed:  0.08<br />predicted:  1.219773401<br />method: Random Forest","observed:  0.95<br />predicted:  0.702204253<br />method: Random Forest","observed: -1.69<br />predicted:  0.699163511<br />method: Random Forest","observed: -1.09<br />predicted:  0.257089148<br />method: Random Forest","observed:  0.79<br />predicted:  0.664484499<br />method: Random Forest","observed:  2.00<br />predicted:  1.262774629<br />method: Random Forest","observed:  0.71<br />predicted:  1.286850036<br />method: Random Forest","observed: -0.18<br />predicted:  0.265521175<br />method: Random Forest","observed: -0.30<br />predicted:  0.861103373<br />method: Random Forest","observed:  5.21<br />predicted:  1.129647688<br />method: Random Forest","observed:  1.76<br />predicted:  2.057732416<br />method: Random Forest","observed:  0.38<br />predicted:  1.745300546<br />method: Random Forest","observed:  3.19<br />predicted:  1.527704099<br />method: Random Forest","observed:  2.89<br />predicted:  1.408937631<br />method: Random Forest","observed:  0.55<br />predicted:  2.136109785<br />method: Random Forest","observed:  1.12<br />predicted:  1.261995836<br />method: Random Forest","observed:  1.72<br />predicted:  1.561789681<br />method: Random Forest","observed: -1.44<br />predicted:  0.904727386<br />method: Random Forest","observed:  1.83<br />predicted:  0.333416474<br />method: Random Forest","observed:  0.63<br />predicted:  0.296627068<br />method: Random Forest","observed:  0.09<br />predicted:  0.610100227<br />method: Random Forest","observed: -1.39<br />predicted:  0.728347319<br />method: Random Forest","observed:  3.20<br />predicted:  1.727582969<br />method: Random Forest","observed:  1.36<br />predicted:  1.425384535<br />method: Random Forest","observed:  2.49<br />predicted:  0.739270200<br />method: Random Forest","observed:  0.70<br />predicted:  1.956775533<br />method: Random Forest","observed: -1.28<br />predicted:  0.726119968<br />method: Random Forest","observed:  4.55<br />predicted:  1.983854268<br />method: Random Forest","observed: -0.21<br />predicted:  2.015762842<br />method: Random Forest"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,191,196,1)","opacity":0.75,"size":9.8267716535433092,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(0,191,196,1)"}},"hoveron":"points","name":"Random Forest","legendgroup":"Random Forest","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":10,"r":8.6342880863428846,"b":44.034869240348698,"l":44.034869240348712},"paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":17.268576172685766},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-2.0350000000000001,5.5549999999999997],"tickmode":"array","ticktext":["-2","0","2","4"],"tickvals":[-2,0,2,4],"categoryorder":"array","categoryarray":["-2","0","2","4"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":4.3171440431714414,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":13.814860938148611},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.78493528057662576,"zeroline":false,"anchor":"y","title":{"text":"Observed","font":{"color":"rgba(0,0,0,1)","family":"","size":17.268576172685766}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-2.0350000000000001,5.5549999999999997],"tickmode":"array","ticktext":["-2","0","2","4"],"tickvals":[-2,0,2,4],"categoryorder":"array","categoryarray":["-2","0","2","4"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":4.3171440431714423,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":13.814860938148612},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.78493528057662576,"zeroline":false,"anchor":"x","title":{"text":"Predicted","font":{"color":"rgba(0,0,0,1)","family":"","size":17.268576172685766}},"hoverformat":".2f"},"shapes":[],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":13.814860938148611},"title":{"text":"Method","font":{"color":"rgba(0,0,0,1)","family":"","size":17.268576172685766}}},"hovermode":"closest","height":430,"barmode":"relative","autosize":true},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"3ed133946e2d":{"intercept":{},"slope":{},"type":"scatter"},"3ed16ed4de52":{"x":{},"y":{},"colour":{}}},"cur_data":"3ed133946e2d","visdat":{"3ed133946e2d":["function (y) ","x"],"3ed16ed4de52":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-title="Scoreboard (Oligonucleotide)" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-header"><div class="card-title"><span style="display: inline">
+Scoreboard (Oligonucleotide)
+</span></div></div>
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output-display html-fill-item html-fill-container">
+<div class="datatables html-widget html-fill-item html-fill-container" id="htmlwidget-d8788c6d6eefd57beab3" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-d8788c6d6eefd57beab3">{"x":{"filter":"none","vertical":false,"data":[["Elastic Net","Random Forest"],["covariate","ml"],[true,true],[1.756675222957875,1.665937833355927],[1.462759246333081,1.365811210063806],[0.1076578726107722,0.1956752712759701]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Method<\/th>\n      <th>Type<\/th>\n      <th>Tuned<\/th>\n      <th>RMSE<\/th>\n      <th>MAE<\/th>\n      <th>R2<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"bPaginate":false,"dom":"t","language":{"info":"Showing _TOTAL_ entries"},"paging":false,"columnDefs":[{"targets":3,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 3, 3, \",\", \".\", null);\n  }"},{"targets":4,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 3, 3, \",\", \".\", null);\n  }"},{"targets":5,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 3, 3, \",\", \".\", null);\n  }"},{"className":"dt-right","targets":[3,4,5]},{"name":"Method","targets":0},{"name":"Type","targets":1},{"name":"Tuned","targets":2},{"name":"RMSE","targets":3},{"name":"MAE","targets":4},{"name":"R2","targets":5}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render","options.columnDefs.1.render","options.columnDefs.2.render"],"jsHooks":[]}</script>
+</div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-title="Covariates (Oligonucleotide)" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-header"><div class="card-title"><span style="display: inline">
+Covariates (Oligonucleotide)
+</span></div></div>
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output-display html-fill-item html-fill-container">
+<div class="datatables html-widget html-fill-item html-fill-container" id="htmlwidget-4a8ea356325a737ff446" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-4a8ea356325a737ff446">{"x":{"filter":"none","vertical":false,"data":[["Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest"],["ctg_repeats","age_at_onset","phenotype_juvenile_onset","phenotype_late_onset","family_history_Yes","family_history_Unknown","cognitive_function","disease_duration","smoking_status_Never","bmi","ck_level","cataracts_Yes","sex_Male","muscle_strength","pr_interval","myotonia_severity","insulin_resistance","smoking_status_Former","somatic_mosaicism_index","albumin","ctg_repeats","myotonia_severity","insulin_resistance","age_at_onset","bmi","somatic_mosaicism_index","muscle_strength","family_history","phenotype","sex","cataracts","pr_interval","ck_level","smoking_status","disease_duration","albumin","cognitive_function"],[0.9248689780853584,0.7269186349115223,0.4298645751527981,-0.3856914699218009,-0.3802877291046954,-0.3335774394218329,0.3063035343716497,0.1868271798215524,-0.1788412235442869,-0.1419563641943561,-0.1265198975300607,-0.112140468841367,-0.1080682912598034,-0.08809319923016572,-0.08138860890747035,-0.07718847457322206,-0.07045855195106396,-0.05863791959755198,-0.0492834509936475,-0.0285560365145909,0.3982545356666164,0.1665192774503917,0.07808711120768771,0.05808948810849986,0.03809319229312419,0.03713677044599671,0.03688358202398169,0.0196154418140399,0.01427693500236946,0.00435996695882384,-0.00111477920070822,-0.00612464048676168,-0.00663975215183071,-0.00713929230981525,-0.01162401182324912,-0.01599603959468856,-0.02966169848646928],["coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance"],[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Method<\/th>\n      <th>Covariate<\/th>\n      <th>Value<\/th>\n      <th>Type<\/th>\n      <th>Rank<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"bPaginate":false,"dom":"ifrt","language":{"info":"Showing _TOTAL_ entries"},"pageLength":10,"columnDefs":[{"targets":2,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 3, 3, \",\", \".\", null);\n  }"},{"className":"dt-right","targets":[2,4]},{"name":"Method","targets":0},{"name":"Covariate","targets":1},{"name":"Value","targets":2},{"name":"Type","targets":3},{"name":"Rank","targets":4}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render"],"jsHooks":[]}</script>
+</div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+<div id="tabset-1-3" class="tab-pane html-fill-item html-fill-container" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<div class="card cell html-fill-item html-fill-container bslib-card" data-title="Predicted vs. Observed (Tideglusib)" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-header"><div class="card-title"><span style="display: inline">
+Predicted vs.&nbsp;Observed (Tideglusib)
+</span></div></div>
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output-display html-fill-item html-fill-container">
+<div id="htmlwidget-40a602b8e16add8ab2b8" style="width:100%;height:363px;" class="plotly html-widget html-fill-item html-fill-container"></div>
+<script type="application/json" data-for="htmlwidget-40a602b8e16add8ab2b8">{"x":{"data":[{"x":[-0.62000000000000011,13.02],"y":[-0.62000000000000011,13.02],"text":"intercept: 0<br />slope: 1","type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(127,127,127,1)","dash":"dash"},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[6.4000000000000004,3.8999999999999999,6.0999999999999996,3.5,0,3.5,0,8.9000000000000004,11.9,6.7999999999999998,9.5999999999999996,3.7000000000000002,0,9.5,6.4000000000000004,0,1.5,5.9000000000000004,4.4000000000000004,4.0999999999999996,9.9000000000000004,8.5999999999999996,5.7999999999999998,6.0999999999999996,7.7000000000000002,7.4000000000000004,8.1999999999999993,5.5999999999999996,12.4,5.5999999999999996,7.9000000000000004,4.5,0.40000000000000002,6.7999999999999998,0],"y":[4.7762546892243813,4.2319366212992078,5.4424415250688334,4.9149516492815639,4.2664167179975596,4.7506582181918739,4.6241270628967159,7.2655967653447862,6.2003104309054811,4.3025570080390239,6.3216600371381535,4.0498134505794692,5.5384116602627609,7.0243897829874697,6.6627869902070742,3.6167941819539817,4.556233396613286,3.957523175205377,7.3533187147632644,4.1186942647549847,6.0105819995434979,7.8396048135998617,8.0051368564955272,5.4051442934908476,6.4493227307470695,5.3585029558477046,6.2890679133350504,3.5834939374715158,6.9354681336621349,6.6935117614450323,5.8189912597594864,4.1235927482614523,5.319632258897756,5.8522221587128982,4.8032379823602351],"text":["observed:  6.4<br />predicted: 4.776255<br />method: Elastic Net","observed:  3.9<br />predicted: 4.231937<br />method: Elastic Net","observed:  6.1<br />predicted: 5.442442<br />method: Elastic Net","observed:  3.5<br />predicted: 4.914952<br />method: Elastic Net","observed:  0.0<br />predicted: 4.266417<br />method: Elastic Net","observed:  3.5<br />predicted: 4.750658<br />method: Elastic Net","observed:  0.0<br />predicted: 4.624127<br />method: Elastic Net","observed:  8.9<br />predicted: 7.265597<br />method: Elastic Net","observed: 11.9<br />predicted: 6.200310<br />method: Elastic Net","observed:  6.8<br />predicted: 4.302557<br />method: Elastic Net","observed:  9.6<br />predicted: 6.321660<br />method: Elastic Net","observed:  3.7<br />predicted: 4.049813<br />method: Elastic Net","observed:  0.0<br />predicted: 5.538412<br />method: Elastic Net","observed:  9.5<br />predicted: 7.024390<br />method: Elastic Net","observed:  6.4<br />predicted: 6.662787<br />method: Elastic Net","observed:  0.0<br />predicted: 3.616794<br />method: Elastic Net","observed:  1.5<br />predicted: 4.556233<br />method: Elastic Net","observed:  5.9<br />predicted: 3.957523<br />method: Elastic Net","observed:  4.4<br />predicted: 7.353319<br />method: Elastic Net","observed:  4.1<br />predicted: 4.118694<br />method: Elastic Net","observed:  9.9<br />predicted: 6.010582<br />method: Elastic Net","observed:  8.6<br />predicted: 7.839605<br />method: Elastic Net","observed:  5.8<br />predicted: 8.005137<br />method: Elastic Net","observed:  6.1<br />predicted: 5.405144<br />method: Elastic Net","observed:  7.7<br />predicted: 6.449323<br />method: Elastic Net","observed:  7.4<br />predicted: 5.358503<br />method: Elastic Net","observed:  8.2<br />predicted: 6.289068<br />method: Elastic Net","observed:  5.6<br />predicted: 3.583494<br />method: Elastic Net","observed: 12.4<br />predicted: 6.935468<br />method: Elastic Net","observed:  5.6<br />predicted: 6.693512<br />method: Elastic Net","observed:  7.9<br />predicted: 5.818991<br />method: Elastic Net","observed:  4.5<br />predicted: 4.123593<br />method: Elastic Net","observed:  0.4<br />predicted: 5.319632<br />method: Elastic Net","observed:  6.8<br />predicted: 5.852222<br />method: Elastic Net","observed:  0.0<br />predicted: 4.803238<br />method: Elastic Net"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","opacity":0.75,"size":9.8267716535433092,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(248,118,109,1)"}},"hoveron":"points","name":"Elastic Net","legendgroup":"Elastic Net","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[6.4000000000000004,3.8999999999999999,6.0999999999999996,3.5,0,3.5,0,8.9000000000000004,11.9,6.7999999999999998,9.5999999999999996,3.7000000000000002,0,9.5,6.4000000000000004,0,1.5,5.9000000000000004,4.4000000000000004,4.0999999999999996,9.9000000000000004,8.5999999999999996,5.7999999999999998,6.0999999999999996,7.7000000000000002,7.4000000000000004,8.1999999999999993,5.5999999999999996,12.4,5.5999999999999996,7.9000000000000004,4.5,0.40000000000000002,6.7999999999999998,0],"y":[3.805300000000011,3.5662000000000127,5.7690500000000258,3.4847000000000019,2.5895000000000006,4.4061999999999966,2.1810500000000004,7.0342000000000171,7.1566833333333228,3.7930500000000129,6.7448833333333269,3.7039500000000101,5.1222333333333392,7.5519333333333174,7.2213500000000064,2.5813500000000178,4.4756000000000062,4.712300000000015,7.4175833333333179,3.8218500000000049,7.7864999999999984,8.4527388888888915,8.17865000000001,4.0394166666666731,7.7082000000000015,4.5631500000000011,6.9980999999999902,3.5674500000000062,6.8946999999999967,7.0400500000000026,6.5350500000000107,3.3102000000000027,3.971950000000017,6.5994833333333274,3.0390800000000087],"text":["observed:  6.4<br />predicted: 3.805300<br />method: Random Forest","observed:  3.9<br />predicted: 3.566200<br />method: Random Forest","observed:  6.1<br />predicted: 5.769050<br />method: Random Forest","observed:  3.5<br />predicted: 3.484700<br />method: Random Forest","observed:  0.0<br />predicted: 2.589500<br />method: Random Forest","observed:  3.5<br />predicted: 4.406200<br />method: Random Forest","observed:  0.0<br />predicted: 2.181050<br />method: Random Forest","observed:  8.9<br />predicted: 7.034200<br />method: Random Forest","observed: 11.9<br />predicted: 7.156683<br />method: Random Forest","observed:  6.8<br />predicted: 3.793050<br />method: Random Forest","observed:  9.6<br />predicted: 6.744883<br />method: Random Forest","observed:  3.7<br />predicted: 3.703950<br />method: Random Forest","observed:  0.0<br />predicted: 5.122233<br />method: Random Forest","observed:  9.5<br />predicted: 7.551933<br />method: Random Forest","observed:  6.4<br />predicted: 7.221350<br />method: Random Forest","observed:  0.0<br />predicted: 2.581350<br />method: Random Forest","observed:  1.5<br />predicted: 4.475600<br />method: Random Forest","observed:  5.9<br />predicted: 4.712300<br />method: Random Forest","observed:  4.4<br />predicted: 7.417583<br />method: Random Forest","observed:  4.1<br />predicted: 3.821850<br />method: Random Forest","observed:  9.9<br />predicted: 7.786500<br />method: Random Forest","observed:  8.6<br />predicted: 8.452739<br />method: Random Forest","observed:  5.8<br />predicted: 8.178650<br />method: Random Forest","observed:  6.1<br />predicted: 4.039417<br />method: Random Forest","observed:  7.7<br />predicted: 7.708200<br />method: Random Forest","observed:  7.4<br />predicted: 4.563150<br />method: Random Forest","observed:  8.2<br />predicted: 6.998100<br />method: Random Forest","observed:  5.6<br />predicted: 3.567450<br />method: Random Forest","observed: 12.4<br />predicted: 6.894700<br />method: Random Forest","observed:  5.6<br />predicted: 7.040050<br />method: Random Forest","observed:  7.9<br />predicted: 6.535050<br />method: Random Forest","observed:  4.5<br />predicted: 3.310200<br />method: Random Forest","observed:  0.4<br />predicted: 3.971950<br />method: Random Forest","observed:  6.8<br />predicted: 6.599483<br />method: Random Forest","observed:  0.0<br />predicted: 3.039080<br />method: Random Forest"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,191,196,1)","opacity":0.75,"size":9.8267716535433092,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(0,191,196,1)"}},"hoveron":"points","name":"Random Forest","legendgroup":"Random Forest","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":10,"r":8.6342880863428846,"b":44.034869240348698,"l":44.034869240348712},"paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":17.268576172685766},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.62000000000000011,13.02],"tickmode":"array","ticktext":["0","4","8","12"],"tickvals":[0,4,8,12],"categoryorder":"array","categoryarray":["0","4","8","12"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":4.3171440431714414,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":13.814860938148611},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.78493528057662576,"zeroline":false,"anchor":"y","title":{"text":"Observed","font":{"color":"rgba(0,0,0,1)","family":"","size":17.268576172685766}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.62000000000000011,13.02],"tickmode":"array","ticktext":["0","4","8","12"],"tickvals":[0,4,8,12],"categoryorder":"array","categoryarray":["0","4","8","12"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":4.3171440431714423,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":13.814860938148612},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.78493528057662576,"zeroline":false,"anchor":"x","title":{"text":"Predicted","font":{"color":"rgba(0,0,0,1)","family":"","size":17.268576172685766}},"hoverformat":".2f"},"shapes":[],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":13.814860938148611},"title":{"text":"Method","font":{"color":"rgba(0,0,0,1)","family":"","size":17.268576172685766}}},"hovermode":"closest","height":430,"barmode":"relative","autosize":true},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"3ed127643a99":{"intercept":{},"slope":{},"type":"scatter"},"3ed16de51dfe":{"x":{},"y":{},"colour":{}}},"cur_data":"3ed127643a99","visdat":{"3ed127643a99":["function (y) ","x"],"3ed16de51dfe":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-title="Scoreboard (Tideglusib)" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-header"><div class="card-title"><span style="display: inline">
+Scoreboard (Tideglusib)
+</span></div></div>
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output-display html-fill-item html-fill-container">
+<div class="datatables html-widget html-fill-item html-fill-container" id="htmlwidget-d75e52d3c58b220e7b4a" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-d75e52d3c58b220e7b4a">{"x":{"filter":"none","vertical":false,"data":[["Elastic Net","Random Forest"],["covariate","ml"],[true,true],[2.871468415972083,2.419806748269809],[2.341398155133008,1.955708793650793],[0.3221678325522417,0.5212965422828811]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Method<\/th>\n      <th>Type<\/th>\n      <th>Tuned<\/th>\n      <th>RMSE<\/th>\n      <th>MAE<\/th>\n      <th>R2<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"bPaginate":false,"dom":"t","language":{"info":"Showing _TOTAL_ entries"},"paging":false,"columnDefs":[{"targets":3,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 3, 3, \",\", \".\", null);\n  }"},{"targets":4,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 3, 3, \",\", \".\", null);\n  }"},{"targets":5,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 3, 3, \",\", \".\", null);\n  }"},{"className":"dt-right","targets":[3,4,5]},{"name":"Method","targets":0},{"name":"Type","targets":1},{"name":"Tuned","targets":2},{"name":"RMSE","targets":3},{"name":"MAE","targets":4},{"name":"R2","targets":5}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render","options.columnDefs.1.render","options.columnDefs.2.render"],"jsHooks":[]}</script>
+</div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-title="Covariates (Tideglusib)" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-header"><div class="card-title"><span style="display: inline">
+Covariates (Tideglusib)
+</span></div></div>
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output-display html-fill-item html-fill-container">
+<div class="datatables html-widget html-fill-item html-fill-container" id="htmlwidget-e318d30d1e1884e83346" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-e318d30d1e1884e83346">{"x":{"filter":"none","vertical":false,"data":[["Elastic Net","Elastic Net","Elastic Net","Elastic Net","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest"],["cognitive_function","ctg_repeats","myotonia_severity","disease_duration","cognitive_function","muscle_strength","disease_duration","myotonia_severity","pr_interval","ctg_repeats","albumin","phenotype","bmi","age_at_onset","cataracts","somatic_mosaicism_index","sex","insulin_resistance","ck_level","smoking_status","family_history"],[-1.078311008354556,0.1673158972983608,0.03470252651678883,-0.01019447339781317,5.291992458778394,0.8188417942008762,0.2904397408616012,0.2191535017064024,0.160174103233323,0.1553206340246452,0.05769975078827846,0.05504258689536407,0.04077133480548896,0.03721726653362512,0.03660645181779243,0.0284280257364843,0.02531173436401653,0.00718245167857829,-0.009422916961287119,-0.02136536622380288,-0.02399963225282008],["coefficient","coefficient","coefficient","coefficient","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance"],[1,2,3,4,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Method<\/th>\n      <th>Covariate<\/th>\n      <th>Value<\/th>\n      <th>Type<\/th>\n      <th>Rank<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"bPaginate":false,"dom":"ifrt","language":{"info":"Showing _TOTAL_ entries"},"pageLength":10,"columnDefs":[{"targets":2,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 3, 3, \",\", \".\", null);\n  }"},{"className":"dt-right","targets":[2,4]},{"name":"Method","targets":0},{"name":"Covariate","targets":1},{"name":"Value","targets":2},{"name":"Type","targets":3},{"name":"Rank","targets":4}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render"],"jsHooks":[]}</script>
+</div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+</div>
+</div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+</div>
+<div id="data-explorer" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-data-explorer">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, max-content); grid-auto-columns: minmax(0, 1fr);">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<!-- Deliberately minimal: outcome distribution + top covariates per arm. Expand only if the
+     team specifically asks for more -- do not add a pile of filter widgets. -->
+<div class="panel-tabset html-fill-item html-fill-container">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Mexiletine</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Oligonucleotide</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false" href="">Tideglusib</a></li></ul>
+<div class="tab-content html-fill-item html-fill-container">
+<div id="tabset-2-1" class="tab-pane active html-fill-item html-fill-container" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div class="card cell html-fill-item html-fill-container bslib-card" data-title="Top covariates (Mexiletine)" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-header"><div class="card-title"><span style="display: inline">
+Top covariates (Mexiletine)
+</span></div></div>
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output-display html-fill-item html-fill-container">
+<div class="datatables html-widget html-fill-item html-fill-container" id="htmlwidget-fc44142678e8a1a1df27" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-fc44142678e8a1a1df27">{"x":{"filter":"none","vertical":false,"data":[["Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest"],["myotonia_severity","family_history_Yes","family_history_Unknown","cognitive_function","disease_duration","sex_Male","ctg_repeats","ck_level","smoking_status_Never","cataracts_Yes","pr_interval","phenotype_juvenile_onset","age_at_onset","insulin_resistance","phenotype_late_onset","somatic_mosaicism_index","bmi","smoking_status_Former","myotonia_severity","ctg_repeats","phenotype","age_at_onset","somatic_mosaicism_index","cognitive_function","disease_duration","muscle_strength","insulin_resistance","family_history","cataracts","pr_interval","sex","bmi","smoking_status","ck_level"],[-0.9646627716966432,-0.228829678216553,-0.191180880591064,0.1506107654180339,0.1394593286895934,-0.1040572027148333,-0.09907782338443544,-0.08335154732043398,-0.06631843769087613,-0.05422953584738654,0.05288855360157271,0.04628525821139999,0.04178092534215651,-0.03816543998294505,-0.03690385936265492,0.02506251688094057,-0.01704331240704071,-0.00983966738738524,0.7632434056387886,0.4735905862988329,0.09340310872325172,0.05692201876042053,0.04977424227282182,0.03029726744354934,0.02959150648345401,0.02936316878669612,0.0087898470405276,0.00457209912376886,0.00429152546455166,0.00246996059939295,0.00175783486470379,0.00146222707275043,-0.00318802951564103,-0.01091722791989548],["coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance"],[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Method<\/th>\n      <th>Covariate<\/th>\n      <th>Value<\/th>\n      <th>Type<\/th>\n      <th>Rank<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"bPaginate":false,"dom":"ifrt","language":{"info":"Showing _TOTAL_ entries"},"pageLength":10,"columnDefs":[{"targets":2,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 3, 3, \",\", \".\", null);\n  }"},{"className":"dt-right","targets":[2,4]},{"name":"Method","targets":0},{"name":"Covariate","targets":1},{"name":"Value","targets":2},{"name":"Type","targets":3},{"name":"Rank","targets":4}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render"],"jsHooks":[]}</script>
+</div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+<div id="tabset-2-2" class="tab-pane html-fill-item html-fill-container" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div class="card cell html-fill-item html-fill-container bslib-card" data-title="Top covariates (Oligonucleotide)" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-header"><div class="card-title"><span style="display: inline">
+Top covariates (Oligonucleotide)
+</span></div></div>
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output-display html-fill-item html-fill-container">
+<div class="datatables html-widget html-fill-item html-fill-container" id="htmlwidget-bc67391e1875a2c52947" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-bc67391e1875a2c52947">{"x":{"filter":"none","vertical":false,"data":[["Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Elastic Net","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest"],["ctg_repeats","age_at_onset","phenotype_juvenile_onset","phenotype_late_onset","family_history_Yes","family_history_Unknown","cognitive_function","disease_duration","smoking_status_Never","bmi","ck_level","cataracts_Yes","sex_Male","muscle_strength","pr_interval","myotonia_severity","insulin_resistance","smoking_status_Former","somatic_mosaicism_index","albumin","ctg_repeats","myotonia_severity","insulin_resistance","age_at_onset","bmi","somatic_mosaicism_index","muscle_strength","family_history","phenotype","sex","cataracts","pr_interval","ck_level","smoking_status","disease_duration","albumin","cognitive_function"],[0.9248689780853584,0.7269186349115223,0.4298645751527981,-0.3856914699218009,-0.3802877291046954,-0.3335774394218329,0.3063035343716497,0.1868271798215524,-0.1788412235442869,-0.1419563641943561,-0.1265198975300607,-0.112140468841367,-0.1080682912598034,-0.08809319923016572,-0.08138860890747035,-0.07718847457322206,-0.07045855195106396,-0.05863791959755198,-0.0492834509936475,-0.0285560365145909,0.3982545356666164,0.1665192774503917,0.07808711120768771,0.05808948810849986,0.03809319229312419,0.03713677044599671,0.03688358202398169,0.0196154418140399,0.01427693500236946,0.00435996695882384,-0.00111477920070822,-0.00612464048676168,-0.00663975215183071,-0.00713929230981525,-0.01162401182324912,-0.01599603959468856,-0.02966169848646928],["coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","coefficient","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance"],[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Method<\/th>\n      <th>Covariate<\/th>\n      <th>Value<\/th>\n      <th>Type<\/th>\n      <th>Rank<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"bPaginate":false,"dom":"ifrt","language":{"info":"Showing _TOTAL_ entries"},"pageLength":10,"columnDefs":[{"targets":2,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 3, 3, \",\", \".\", null);\n  }"},{"className":"dt-right","targets":[2,4]},{"name":"Method","targets":0},{"name":"Covariate","targets":1},{"name":"Value","targets":2},{"name":"Type","targets":3},{"name":"Rank","targets":4}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render"],"jsHooks":[]}</script>
+</div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+<div id="tabset-2-3" class="tab-pane html-fill-item html-fill-container" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<div class="card cell html-fill-item html-fill-container bslib-card" data-title="Top covariates (Tideglusib)" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-header"><div class="card-title"><span style="display: inline">
+Top covariates (Tideglusib)
+</span></div></div>
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output-display html-fill-item html-fill-container">
+<div class="datatables html-widget html-fill-item html-fill-container" id="htmlwidget-96c634fa8f599828ad7c" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-96c634fa8f599828ad7c">{"x":{"filter":"none","vertical":false,"data":[["Elastic Net","Elastic Net","Elastic Net","Elastic Net","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest","Random Forest"],["cognitive_function","ctg_repeats","myotonia_severity","disease_duration","cognitive_function","muscle_strength","disease_duration","myotonia_severity","pr_interval","ctg_repeats","albumin","phenotype","bmi","age_at_onset","cataracts","somatic_mosaicism_index","sex","insulin_resistance","ck_level","smoking_status","family_history"],[-1.078311008354556,0.1673158972983608,0.03470252651678883,-0.01019447339781317,5.291992458778394,0.8188417942008762,0.2904397408616012,0.2191535017064024,0.160174103233323,0.1553206340246452,0.05769975078827846,0.05504258689536407,0.04077133480548896,0.03721726653362512,0.03660645181779243,0.0284280257364843,0.02531173436401653,0.00718245167857829,-0.009422916961287119,-0.02136536622380288,-0.02399963225282008],["coefficient","coefficient","coefficient","coefficient","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance","importance"],[1,2,3,4,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Method<\/th>\n      <th>Covariate<\/th>\n      <th>Value<\/th>\n      <th>Type<\/th>\n      <th>Rank<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"bPaginate":false,"dom":"ifrt","language":{"info":"Showing _TOTAL_ entries"},"pageLength":10,"columnDefs":[{"targets":2,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 3, 3, \",\", \".\", null);\n  }"},{"className":"dt-right","targets":[2,4]},{"name":"Method","targets":0},{"name":"Covariate","targets":1},{"name":"Value","targets":2},{"name":"Type","targets":3},{"name":"Rank","targets":4}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render"],"jsHooks":[]}</script>
+</div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+</div>
+</div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div id="3ade8a4a-fb1d-4a6c-8409-ac45482d5fc9" class="hidden html-fill-item html-fill-container">
+
+</div>
+</div>
+</div>
+</div>
+
+
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /container fluid -->
+
+<script type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (_event) {
+  if (window.bslib.Card) {
+    window.bslib.Card.initializeAllCards();
+  }
+}); 
+</script>
+  
+
+
+
+</body></html>

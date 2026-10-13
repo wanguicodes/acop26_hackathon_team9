@@ -1,0 +1,201 @@
+---
+title: "DM1 Hackathon — Per-arm Modeling Template"
+format: html
+params:
+  arm: "Mexiletine"
+execute:
+  warning: false
+  message: false
+---
+
+<!--
+WHAT THIS FILE IS
+  A reference / fallback implementation of the per-arm modeling step: covariate
+  baseline (elastic net) vs. ML stress test (random forest), on the team's shared
+  split, writing results in the shared contract format so the dashboard/app can
+  display them.
+
+  You are NOT required to use this exact methodology. Use whatever models and
+  packages you want. The only requirement is that your results land in
+  `deliverable/results/<arm_slug>/{scoreboard,covariates,predictions}.csv` with the columns
+  shown at the bottom of this file. See
+  .posit/assistant/skills/dm1-results-integration/SKILL.md for the full contract
+  and for instructions your Posit Assistant can follow to wire YOUR results in.
+
+HOW TO RUN THIS FOR A DIFFERENT ARM
+  quarto render deliverable/templates/quarto_workflow/model_workflow.qmd -P arm:Oligonucleotide
+  quarto render deliverable/templates/quarto_workflow/model_workflow.qmd -P arm:Tideglusib
+-->
+
+```{r setup}
+library(tidymodels)
+library(dplyr)
+library(readr)
+library(tibble)
+library(stringr)
+library(rprojroot)
+
+arm <- params$arm
+arm_slug <- tolower(arm)
+
+outcome_of <- c(
+  Mexiletine      = "myotonia_change_12wk",
+  Oligonucleotide = "qmt_change_26wk",
+  Tideglusib      = "tideglusib_composite"
+)
+outcome_col <- outcome_of[[arm]]
+
+leaky_cols <- c(
+  "patient_id", "treatment_arm", "responder",
+  "myotonia_change_12wk", "qmt_change_26wk", "tideglusib_composite",
+  "responder_phenotype_mex", "responder_phenotype_oligo", "responder_phenotype_tidge"
+)
+
+root <- rprojroot::find_root(rprojroot::is_git_root)
+train_path <- file.path(root, "data", "derived", "split", "training_shared.csv")
+test_path  <- file.path(root, "data", "derived", "split", "testing_shared.csv")
+out_dir    <- file.path(root, "deliverable", "results", arm_slug)
+dir.create(out_dir, showWarnings = FALSE, recursive = TRUE)
+```
+
+```{r load-data}
+train_full <- read_csv(train_path, show_col_types = FALSE)
+test_full  <- read_csv(test_path, show_col_types = FALSE)
+
+# `age` is dropped everywhere: age == age_at_onset + disease_duration exactly
+# (confirmed across all 500 patients) -- an exact linear identity, not just a
+# correlation, so keeping all three would make elastic net/stepwise rank-deficient.
+predictor_cols <- setdiff(names(train_full), c(leaky_cols, outcome_col, "age"))
+
+train_arm <- train_full |>
+  filter(treatment_arm == arm) |>
+  select(all_of(c(predictor_cols, outcome_col))) |>
+  rename(outcome = all_of(outcome_col))
+
+test_arm <- test_full |>
+  filter(treatment_arm == arm) |>
+  select(all_of(c(predictor_cols, outcome_col))) |>
+  rename(outcome = all_of(outcome_col))
+
+# Patient IDs for the predictions export (kept out of the modeling data itself)
+train_ids <- train_full |> filter(treatment_arm == arm) |> pull(patient_id)
+test_ids  <- test_full  |> filter(treatment_arm == arm) |> pull(patient_id)
+
+cat(arm, "- training rows:", nrow(train_arm), " test rows:", nrow(test_arm), "\n")
+```
+
+```{r cv-and-metrics}
+set.seed(2026)
+folds <- vfold_cv(train_arm, v = 5)
+metrics <- metric_set(rmse, mae, rsq)
+```
+
+## Covariate baseline: Elastic Net
+
+```{r elastic-net}
+rec_enet <- recipe(outcome ~ ., data = train_arm) |>
+  step_novel(all_nominal_predictors()) |>
+  step_unknown(all_nominal_predictors()) |>
+  step_dummy(all_nominal_predictors()) |>
+  step_zv(all_predictors()) |>
+  step_normalize(all_numeric_predictors())
+
+spec_enet <- linear_reg(penalty = tune(), mixture = tune()) |>
+  set_engine("glmnet")
+
+wf_enet <- workflow() |> add_recipe(rec_enet) |> add_model(spec_enet)
+
+tune_enet <- tune_grid(wf_enet, resamples = folds, metrics = metrics, grid = 5)
+best_enet <- select_best(tune_enet, metric = "rmse")
+
+final_enet <- finalize_workflow(wf_enet, best_enet) |> fit(train_arm)
+```
+
+## ML stress test: Random Forest
+
+```{r random-forest}
+rec_rf <- recipe(outcome ~ ., data = train_arm) |>
+  step_novel(all_nominal_predictors()) |>
+  step_unknown(all_nominal_predictors()) |>
+  step_zv(all_predictors())
+
+spec_rf <- rand_forest(trees = tune(), min_n = tune()) |>
+  set_engine("ranger", importance = "permutation", seed = 2026) |>
+  set_mode("regression")
+
+wf_rf <- workflow() |> add_recipe(rec_rf) |> add_model(spec_rf)
+
+tune_rf <- tune_grid(wf_rf, resamples = folds, metrics = metrics, grid = 5)
+best_rf <- select_best(tune_rf, metric = "rmse")
+
+final_rf <- finalize_workflow(wf_rf, best_rf) |> fit(train_arm)
+```
+
+## Test-set evaluation (once, locked)
+
+```{r evaluate}
+pred_enet <- predict(final_enet, test_arm)$.pred
+pred_rf   <- predict(final_rf, test_arm)$.pred
+
+score_one <- function(obs, pred) {
+  tibble(obs = obs, pred = pred) |>
+    summarise(
+      rmse = sqrt(mean((obs - pred)^2)),
+      mae  = mean(abs(obs - pred)),
+      r2   = suppressWarnings(cor(obs, pred)^2)
+    )
+}
+
+scoreboard <- bind_rows(
+  score_one(test_arm$outcome, pred_enet) |>
+    mutate(arm = arm, method = "Elastic Net", method_type = "covariate", tuned = TRUE),
+  score_one(test_arm$outcome, pred_rf) |>
+    mutate(arm = arm, method = "Random Forest", method_type = "ml", tuned = TRUE)
+) |>
+  select(arm, method, method_type, tuned, rmse, mae, r2)
+
+scoreboard
+```
+
+## Covariates: coefficients vs. importance
+
+```{r covariates}
+coefs <- tidy(extract_fit_parsnip(final_enet), penalty = best_enet$penalty) |>
+  filter(term != "(Intercept)", estimate != 0) |>
+  transmute(arm = arm, method = "Elastic Net", covariate = term,
+            value = estimate, value_type = "coefficient") |>
+  arrange(desc(abs(value))) |>
+  mutate(rank = row_number())
+
+rf_engine <- extract_fit_engine(final_rf)
+importance <- rf_engine$variable.importance
+covariates_rf <- tibble(covariate = names(importance), value = unname(importance)) |>
+  mutate(arm = arm, method = "Random Forest", value_type = "importance") |>
+  arrange(desc(value)) |>
+  mutate(rank = row_number()) |>
+  select(arm, method, covariate, value, value_type, rank)
+
+covariates_all <- bind_rows(coefs, covariates_rf)
+covariates_all
+```
+
+## Predictions (test set, for the predicted-vs-observed plot)
+
+```{r predictions}
+predictions_all <- bind_rows(
+  tibble(arm = arm, patient_id = test_ids, observed = test_arm$outcome,
+         predicted = pred_enet, method = "Elastic Net"),
+  tibble(arm = arm, patient_id = test_ids, observed = test_arm$outcome,
+         predicted = pred_rf, method = "Random Forest")
+)
+```
+
+## Write to the shared results contract
+
+```{r write-outputs}
+write_csv(scoreboard, file.path(out_dir, "scoreboard.csv"))
+write_csv(covariates_all, file.path(out_dir, "covariates.csv"))
+write_csv(predictions_all, file.path(out_dir, "predictions.csv"))
+
+cat("Wrote results for", arm, "to", out_dir, "\n")
+```

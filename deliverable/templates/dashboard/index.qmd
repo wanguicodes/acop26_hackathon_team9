@@ -1,0 +1,159 @@
+---
+title: "DM1 Hackathon — Team 9"
+format:
+  dashboard:
+    orientation: rows
+execute:
+  warning: false
+  message: false
+---
+
+<!--
+WHAT THIS FILE IS
+  The evaluation dashboard. Reads from deliverable/results/<arm_slug>/{scoreboard,covariates,
+  predictions}.csv -- see .posit/assistant/skills/dm1-results-integration/SKILL.md
+  for the exact contract. Swap in real team results by writing files matching
+  that schema; nothing else here needs to change.
+
+  Render with: quarto render deliverable/templates/dashboard/index.qmd
+-->
+
+```{r setup}
+library(dplyr)
+library(readr)
+library(plotly)
+library(DT)
+library(rprojroot)
+library(ggplot2)
+
+root <- rprojroot::find_root(rprojroot::is_git_root)
+arms <- c(mexiletine = "Mexiletine", oligonucleotide = "Oligonucleotide", tideglusib = "Tideglusib")
+
+read_arm <- function(slug, file) {
+  path <- file.path(root, "deliverable", "results", slug, file)
+  if (!file.exists(path)) return(NULL)
+  read_csv(path, show_col_types = FALSE)
+}
+
+scoreboard_all   <- bind_rows(lapply(names(arms), read_arm, file = "scoreboard.csv"))
+covariates_all   <- bind_rows(lapply(names(arms), read_arm, file = "covariates.csv"))
+predictions_all  <- bind_rows(lapply(names(arms), read_arm, file = "predictions.csv"))
+
+pred_vs_obs_plot <- function(arm_name) {
+  d <- predictions_all |> filter(arm == arm_name)
+  if (nrow(d) == 0) return(plotly_empty() |> layout(title = "No predictions yet for this arm"))
+  lims <- range(c(d$observed, d$predicted), na.rm = TRUE)
+  p <- ggplot(d, aes(x = observed, y = predicted, color = method)) +
+    geom_abline(slope = 1, intercept = 0, linetype = "dashed", color = "grey50") +
+    geom_point(alpha = 0.75, size = 2.6) +
+    scale_x_continuous(limits = lims) +
+    scale_y_continuous(limits = lims) +
+    labs(x = "Observed", y = "Predicted", color = "Method") +
+    theme_minimal(base_size = 13)
+  ggplotly(p, height = 430) |> layout(autosize = TRUE, margin = list(t = 10))
+}
+
+metrics_table <- function(arm_name) {
+  scoreboard_all |>
+    filter(arm == arm_name) |>
+    select(Method = method, Type = method_type, Tuned = tuned, RMSE = rmse, MAE = mae, `R2` = r2) |>
+    datatable(options = list(dom = "t", paging = FALSE), rownames = FALSE) |>
+    formatRound(columns = c("RMSE", "MAE", "R2"), digits = 3)
+}
+
+covariate_table <- function(arm_name) {
+  covariates_all |>
+    filter(arm == arm_name) |>
+    select(Method = method, Covariate = covariate, Value = value, Type = value_type, Rank = rank) |>
+    arrange(Method, Rank) |>
+    datatable(options = list(pageLength = 10), rownames = FALSE) |>
+    formatRound(columns = "Value", digits = 3)
+}
+```
+
+# Model Evaluation
+
+::: {.panel-tabset}
+
+## Mexiletine
+
+```{r}
+#| title: Predicted vs. Observed (Mexiletine)
+pred_vs_obs_plot("Mexiletine")
+```
+
+```{r}
+#| title: Scoreboard (Mexiletine)
+metrics_table("Mexiletine")
+```
+
+```{r}
+#| title: Covariates (Mexiletine)
+covariate_table("Mexiletine")
+```
+
+## Oligonucleotide
+
+```{r}
+#| title: Predicted vs. Observed (Oligonucleotide)
+pred_vs_obs_plot("Oligonucleotide")
+```
+
+```{r}
+#| title: Scoreboard (Oligonucleotide)
+metrics_table("Oligonucleotide")
+```
+
+```{r}
+#| title: Covariates (Oligonucleotide)
+covariate_table("Oligonucleotide")
+```
+
+## Tideglusib
+
+```{r}
+#| title: Predicted vs. Observed (Tideglusib)
+pred_vs_obs_plot("Tideglusib")
+```
+
+```{r}
+#| title: Scoreboard (Tideglusib)
+metrics_table("Tideglusib")
+```
+
+```{r}
+#| title: Covariates (Tideglusib)
+covariate_table("Tideglusib")
+```
+
+:::
+
+# Data Explorer
+
+<!-- Deliberately minimal: outcome distribution + top covariates per arm. Expand only if the
+     team specifically asks for more -- do not add a pile of filter widgets. -->
+
+::: {.panel-tabset}
+
+## Mexiletine
+
+```{r}
+#| title: Top covariates (Mexiletine)
+covariate_table("Mexiletine")
+```
+
+## Oligonucleotide
+
+```{r}
+#| title: Top covariates (Oligonucleotide)
+covariate_table("Oligonucleotide")
+```
+
+## Tideglusib
+
+```{r}
+#| title: Top covariates (Tideglusib)
+covariate_table("Tideglusib")
+```
+
+:::
