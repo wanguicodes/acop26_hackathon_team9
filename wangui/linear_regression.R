@@ -289,7 +289,7 @@ pred_obs_plot <- ggplot(pred_obs, aes(observed, predicted)) +
   labs(x = "Observed", y = "Predicted",
        title = "Training set: predicted vs. observed, by treatment arm",
        subtitle = "Blue line = line of unity (predicted = observed)")
-ggsave(file.path(out_dir, "pred_vs_obs.png"), pred_obs_plot,
+ggsave(file.path(out_dir, "pred_vs_obs_training.png"), pred_obs_plot,
        width = 12, height = 4.5, dpi = 150)
 
 write_csv(stats,      file.path(derived_dir, "linear_regression_training_stats.csv"))
