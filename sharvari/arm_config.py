@@ -32,10 +32,12 @@ LEAKY_COLS = [
     "responder_phenotype_mex", "responder_phenotype_oligo", "responder_phenotype_tidge",
 ]
 
-# Placeholder covariate lists: all 18 baseline covariates minus `age`
-# (age == age_at_onset + disease_duration exactly). Albumin is constant in the Mexiletine arm.
-# TODO: replace with the EDA team's final list per arm.
-_DEFAULT_COVARIATES = [c for c in NUM_COLS if c != "age"] + CAT_COLS
+# Final covariate list (team decision, Oct 13): all 18 baseline covariates except
+# - disease_duration: exactly age - age_at_onset, so it adds no information beyond those two
+# - phenotype: onset-age bands, overlapping with age_at_onset
+# Albumin is constant in the Mexiletine arm; load_arm_data drops it there automatically.
+_EXCLUDED = {"disease_duration", "phenotype"}
+_DEFAULT_COVARIATES = [c for c in NUM_COLS + CAT_COLS if c not in _EXCLUDED]
 
 ARMS = {
     "Mexiletine": {
@@ -43,7 +45,7 @@ ARMS = {
         "outcome": "myotonia_change_12wk",
         "outcome_label": "Change in myotonia severity, week 12",
         "better": "lower (negative = improvement)",
-        "covariates": [c for c in _DEFAULT_COVARIATES if c != "albumin"],
+        "covariates": list(_DEFAULT_COVARIATES),
     },
     "Oligonucleotide": {
         "slug": "oligonucleotide",
@@ -60,6 +62,10 @@ ARMS = {
         "covariates": list(_DEFAULT_COVARIATES),
     },
 }
+
+# Numeric covariate scaling, applied inside the model pipeline and fitted on each arm's
+# training data only: "median_iqr" = (x - median) / IQR, "median_center" = x - median, "none".
+NUM_SCALING = "median_iqr"
 
 # Cross-validation design (shared by all arms)
 CV_SETTINGS = {

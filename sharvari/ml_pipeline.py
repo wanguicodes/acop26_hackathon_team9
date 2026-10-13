@@ -10,6 +10,10 @@ The same steps run for every treatment arm:
 6. shap_explain / shap_ranking -- SHAP-based covariate ranking for the selected model
 
 All folds are stratified on quantile bins of the continuous outcome.
+
+Numeric covariates are median-standardized inside the pipeline (default: (x - median) / IQR).
+Because the scaler is a pipeline step, its medians/IQRs are learned from each arm's own
+training data and re-learned inside every CV fold, so test data never informs the scaling.
 """
 
 from __future__ import annotations
@@ -31,11 +35,18 @@ from sklearn.dummy import DummyRegressor
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import GridSearchCV, RepeatedStratifiedKFold
 from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import OneHotEncoder
+from sklearn.preprocessing import OneHotEncoder, RobustScaler
 from xgboost import XGBRegressor
 
 SCORING = "neg_root_mean_squared_error"
 METRICS = ["RMSE", "MAE", "R2"]
+
+# Options for numeric covariate scaling (fitted on training data only, inside the pipeline)
+NUM_SCALERS = {
+    "median_iqr": lambda: RobustScaler(with_centering=True, with_scaling=True),  # (x - median) / IQR
+    "median_center": lambda: RobustScaler(with_centering=True, with_scaling=False),  # x - median
+    "none": lambda: "passthrough",
+}
 
 
 # --------------------------------------------------------------------------- data
@@ -58,18 +69,24 @@ class ArmData:
     cat_cols: list[str]
     dropped: dict[str, str] = field(default_factory=dict)
     noise_cols: list[str] = field(default_factory=list)
+    num_scaling: str = "median_iqr"
 
 
 def load_arm_data(
     train_path, test_path, arm, outcome, covariates, cat_cols_all, leaky_cols,
-    arm_col="treatment_arm", id_col="patient_id",
+    arm_col="treatment_arm", id_col="patient_id", num_scaling="median_iqr",
 ) -> ArmData:
     """Read the shared split files, keep one arm, and validate the inputs.
 
     Raises if a covariate is a leaky column, if columns are missing, if values are missing,
     or if a patient appears in both train and test. Drops covariates that are constant in
     the training set (with a warning), since they carry no information.
+
+    `num_scaling` (see NUM_SCALERS) is applied later, inside the model pipeline; the
+    returned data stay on their raw scale so plots and directions read in clinical units.
     """
+    if num_scaling not in NUM_SCALERS:
+        raise ValueError(f"num_scaling must be one of {list(NUM_SCALERS)}")
     covariates = list(dict.fromkeys(covariates))
     leaked = sorted((set(covariates) & set(leaky_cols)) | ({outcome} & set(covariates)))
     if leaked:
@@ -112,7 +129,7 @@ def load_arm_data(
     return ArmData(
         arm=arm, outcome=outcome, X_train=X_tr, y_train=y_tr, X_test=X_te, y_test=y_te,
         ids_train=id_tr, ids_test=id_te, covariates=used, num_cols=num_cols,
-        cat_cols=cat_cols, dropped=dropped,
+        cat_cols=cat_cols, dropped=dropped, num_scaling=num_scaling,
     )
 
 
@@ -201,12 +218,16 @@ def default_model_specs(seed: int) -> dict[str, ModelSpec]:
     }
 
 
-def build_pipeline(estimator, num_cols, cat_cols) -> Pipeline:
-    """One-hot encode categoricals, pass numerics through unscaled (trees don't need scaling)."""
+def build_pipeline(estimator, num_cols, cat_cols, num_scaling="median_iqr") -> Pipeline:
+    """One-hot encode categoricals; median-standardize numerics (fitted on training data only).
+
+    Tree models are invariant to this monotone rescaling, so it does not change RF/XGBoost
+    predictions; it keeps preprocessing consistent with the covariate models.
+    """
     pre = ColumnTransformer(
         [
             ("cat", OneHotEncoder(handle_unknown="ignore", sparse_output=False), list(cat_cols)),
-            ("num", "passthrough", list(num_cols)),
+            ("num", NUM_SCALERS[num_scaling](), list(num_cols)),
         ],
         remainder="drop",
         verbose_feature_names_out=False,
@@ -216,13 +237,28 @@ def build_pipeline(estimator, num_cols, cat_cols) -> Pipeline:
 
 def fit_spec(spec: ModelSpec, X, y, data: ArmData, cv, n_jobs=-1):
     """Fit one model; tune it with GridSearchCV over `cv` if it has a grid."""
-    pipe = build_pipeline(clone(spec.estimator), data.num_cols, data.cat_cols)
+    pipe = build_pipeline(clone(spec.estimator), data.num_cols, data.cat_cols, data.num_scaling)
     if not spec.grid:
         return pipe.fit(X, y), {}
     search = GridSearchCV(pipe, spec.grid, cv=cv, scoring=SCORING, n_jobs=n_jobs)
     search.fit(X, y)
     best = {k.removeprefix("model__"): v for k, v in search.best_params_.items()}
     return search.best_estimator_, best
+
+
+def scaling_table(pipe: Pipeline, data: ArmData) -> pd.DataFrame:
+    """Median (center) and IQR (scale) learned by the fitted pipeline's numeric scaler."""
+    scaler = pipe.named_steps["pre"].named_transformers_["num"]
+    if not isinstance(scaler, RobustScaler):
+        return pd.DataFrame(index=pd.Index(data.num_cols, name="covariate"))
+    n = len(data.num_cols)
+    return pd.DataFrame(
+        {
+            "median": scaler.center_ if scaler.with_centering else np.zeros(n),
+            "iqr": scaler.scale_ if scaler.with_scaling else np.ones(n),
+        },
+        index=pd.Index(data.num_cols, name="covariate"),
+    ).round(4)
 
 
 def regression_metrics(observed, predicted) -> dict[str, float]:

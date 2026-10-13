@@ -1,0 +1,17 @@
+,rank,mean_abs_shap_train,share_of_total,mean_abs_shap_test,cv_median_rank,cv_top3_freq,direction
+cognitive_function,1,1.752,0.606,1.762,1.0,1.0,higher value -> lower prediction (Spearman -0.90)
+muscle_strength,2,0.464,0.161,0.511,2.0,1.0,higher value -> lower prediction (Spearman -0.32)
+pr_interval,3,0.269,0.093,0.272,3.0,0.8,higher value -> lower prediction (Spearman -0.92)
+myotonia_severity,4,0.127,0.044,0.105,5.0,0.133,higher value -> higher prediction (Spearman +0.97)
+age,5,0.063,0.022,0.066,6.0,0.067,higher value -> lower prediction (Spearman -0.92)
+cataracts,6,0.046,0.016,0.047,7.0,0.0,levels by mean SHAP: Yes > No
+ck_level,7,0.043,0.015,0.045,9.0,0.0,higher value -> lower prediction (Spearman -0.96)
+somatic_mosaicism_index,8,0.04,0.014,0.032,8.0,0.0,higher value -> higher prediction (Spearman +0.81)
+ctg_repeats,9,0.028,0.01,0.024,9.0,0.0,higher value -> higher prediction (Spearman +0.93)
+albumin,10,0.025,0.009,0.024,10.0,0.0,higher value -> higher prediction (Spearman +0.77)
+age_at_onset,11,0.017,0.006,0.017,12.0,0.0,higher value -> lower prediction (Spearman -0.97)
+insulin_resistance,12,0.008,0.003,0.008,10.0,0.0,higher value -> lower prediction (Spearman -0.90)
+family_history,13,0.005,0.002,0.004,12.0,0.0,levels by mean SHAP: Unknown > No > Yes
+bmi,14,0.002,0.001,0.003,11.0,0.0,higher value -> higher prediction (Spearman +0.58)
+sex,15,0.0,0.0,0.0,15.0,0.0,levels by mean SHAP: Female > Male
+smoking_status,16,0.0,0.0,0.0,15.0,0.0,levels by mean SHAP: Current > Former > Never

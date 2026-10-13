@@ -1,0 +1,3 @@
+model,max_features,min_samples_leaf,learning_rate,max_depth,min_child_weight,n_estimators
+rf_tuned,1.0,5.0,,,,
+xgb_tuned,,,0.03,2.0,5.0,100.0

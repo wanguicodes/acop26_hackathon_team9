@@ -1,0 +1,12 @@
+covariate,median,iqr
+ctg_repeats,299.5,270.0
+somatic_mosaicism_index,0.317,0.3778
+age,32.5,23.0
+age_at_onset,22.0,20.75
+myotonia_severity,4.95,2.75
+muscle_strength,64.5,17.0
+pr_interval,179.0,21.0
+cognitive_function,-0.37,0.8675
+ck_level,114.0,131.5
+insulin_resistance,2.345,0.9925
+bmi,25.45,5.15

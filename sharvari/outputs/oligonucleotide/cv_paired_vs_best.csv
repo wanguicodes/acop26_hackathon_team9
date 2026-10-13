@@ -1,0 +1,5 @@
+,mean_RMSE_diff_vs_best,sd_diff,folds_where_best_is_better,n_folds
+null,0.089,0.086,12.0,15.0
+rf_untuned,0.038,0.032,13.0,15.0
+xgb_tuned,0.03,0.043,12.0,15.0
+xgb_untuned,0.24,0.168,14.0,15.0
