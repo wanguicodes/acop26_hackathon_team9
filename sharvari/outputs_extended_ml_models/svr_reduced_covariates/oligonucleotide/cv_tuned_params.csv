@@ -1,0 +1,16 @@
+fold,model,model__regressor__C,model__regressor__epsilon,model__regressor__gamma
+0,svr_tuned,3,0.1,0.01
+1,svr_tuned,1,0.3,0.03
+2,svr_tuned,3,0.05,0.01
+3,svr_tuned,3,0.1,0.01
+4,svr_tuned,30,0.3,0.1
+5,svr_tuned,1,0.3,0.03
+6,svr_tuned,30,0.05,0.01
+7,svr_tuned,3,0.1,0.01
+8,svr_tuned,1,0.05,0.1
+9,svr_tuned,1,0.3,0.03
+10,svr_tuned,3,0.05,0.01
+11,svr_tuned,10,0.05,0.01
+12,svr_tuned,1,0.3,0.03
+13,svr_tuned,3,0.1,0.01
+14,svr_tuned,1,0.1,0.1

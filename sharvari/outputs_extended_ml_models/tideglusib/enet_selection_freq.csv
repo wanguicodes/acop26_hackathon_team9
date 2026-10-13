@@ -1,0 +1,17 @@
+covariate,selection_freq_outer_folds
+cognitive_function,1.0
+ctg_repeats,0.9333333333333333
+pr_interval,0.7333333333333333
+age,0.5333333333333333
+myotonia_severity,0.4666666666666667
+somatic_mosaicism_index,0.4666666666666667
+ck_level,0.4
+insulin_resistance,0.2
+cataracts,0.13333333333333333
+bmi,0.13333333333333333
+age_at_onset,0.06666666666666667
+albumin,0.06666666666666667
+muscle_strength,0.06666666666666667
+family_history,0.06666666666666667
+sex,0.06666666666666667
+smoking_status,0.06666666666666667

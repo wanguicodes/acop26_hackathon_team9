@@ -1,0 +1,9 @@
+,RMSE,RMSE,MAE,MAE,R2,R2
+,mean,std,mean,std,mean,std
+model,,,,,,
+null (reduced),1.281,0.12,1.054,0.092,-0.006,0.008
+rf_tuned (reduced),0.768,0.096,0.585,0.074,0.635,0.072
+xgb_tuned (reduced),0.768,0.11,0.582,0.094,0.633,0.092
+svr_tuned (reduced),0.751,0.118,0.573,0.09,0.653,0.065
+rf_tuned (full),0.789,0.098,0.613,0.078,0.615,0.071
+svr_tuned (full),0.819,0.097,0.643,0.075,0.581,0.093

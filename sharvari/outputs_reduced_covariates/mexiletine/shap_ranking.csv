@@ -1,0 +1,3 @@
+,rank,mean_abs_shap_train,share_of_total,mean_abs_shap_test,cv_median_rank,cv_top3_freq,direction
+myotonia_severity,1,0.717,0.817,0.903,1.0,1.0,higher value -> lower prediction (Spearman -0.99)
+ctg_repeats,2,0.161,0.183,0.172,2.0,1.0,higher value -> lower prediction (Spearman -0.75)

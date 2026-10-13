@@ -1,0 +1,3 @@
+model,covariate,median_rmse_increase,q25,q75,frac_folds_positive,median_rank
+svr_tuned,myotonia_severity,0.8451,0.696,0.9415,1.0,1.0
+svr_tuned,ctg_repeats,0.0102,0.0033,0.0702,0.8,2.0

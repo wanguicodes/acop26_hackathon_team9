@@ -1,0 +1,18 @@
+{
+  "Mexiletine": [
+    "myotonia_severity",
+    "ctg_repeats"
+  ],
+  "Oligonucleotide": [
+    "ctg_repeats",
+    "myotonia_severity",
+    "somatic_mosaicism_index",
+    "insulin_resistance"
+  ],
+  "Tideglusib": [
+    "cognitive_function",
+    "muscle_strength",
+    "pr_interval",
+    "age"
+  ]
+}

@@ -1,0 +1,5 @@
+,rank,mean_abs_shap_train,share_of_total,mean_abs_shap_test,cv_median_rank,cv_top3_freq,direction
+cognitive_function,1,1.854,0.583,1.823,1.0,1.0,higher value -> lower prediction (Spearman -0.75)
+muscle_strength,2,0.715,0.225,0.76,2.0,1.0,higher value -> lower prediction (Spearman -0.52)
+pr_interval,3,0.362,0.114,0.362,3.0,0.733,higher value -> lower prediction (Spearman -0.94)
+age,4,0.25,0.079,0.276,4.0,0.267,higher value -> lower prediction (Spearman -0.95)

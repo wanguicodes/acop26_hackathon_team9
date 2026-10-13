@@ -1,0 +1,5 @@
+,rank,mean_abs_shap_train,share_of_total,mean_abs_shap_test,cv_median_rank,cv_top3_freq,direction
+ctg_repeats,1,0.526,0.596,0.558,1.0,1.0,higher value -> higher prediction (Spearman +0.97)
+insulin_resistance,2,0.199,0.225,0.157,3.0,0.533,higher value -> higher prediction (Spearman +0.68)
+myotonia_severity,3,0.08,0.091,0.089,2.0,0.867,higher value -> higher prediction (Spearman +0.65)
+somatic_mosaicism_index,4,0.078,0.088,0.091,3.0,0.6,higher value -> higher prediction (Spearman +0.74)

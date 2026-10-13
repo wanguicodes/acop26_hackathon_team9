@@ -1,0 +1,4 @@
+model,model__alpha,model__l1_ratio,pre__num__spline__n_knots,model__regressor__C,model__regressor__epsilon,model__regressor__gamma
+enet_tuned,0.1,1.0,,,,
+spline_ridge_tuned,10.0,,4.0,,,
+svr_tuned,,,,1.0,0.05,0.01

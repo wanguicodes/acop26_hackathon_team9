@@ -1,0 +1,2 @@
+model,model__regressor__C,model__regressor__epsilon,model__regressor__gamma
+svr_tuned (reduced),3,0.1,0.1
