@@ -1,12 +1,12 @@
 # DM1 Hackathon -- Team 9 -- Evaluation Shiny App (alternative to the Quarto dashboard)
 #
 # WHAT THIS FILE IS
-#   A Shiny equivalent of templates/dashboard/index.qmd, in case the team prefers
+#   A Shiny equivalent of deliverable/templates/dashboard/index.qmd, in case the team prefers
 #   live server-side reactivity (e.g. to later add a "predict for a hypothetical
-#   patient" input form) over a static dashboard. Reads the same results/ contract --
+#   patient" input form) over a static dashboard. Reads the same deliverable/results/ contract --
 #   see .posit/assistant/skills/dm1-results-integration/SKILL.md.
 #
-# RUN WITH: shiny::runApp("templates/shiny_app")
+# RUN WITH: shiny::runApp("deliverable/templates/shiny_app")
 
 library(shiny)
 library(bslib)
@@ -21,7 +21,7 @@ root <- rprojroot::find_root(rprojroot::is_git_root)
 arms <- c("Mexiletine", "Oligonucleotide", "Tideglusib")
 
 read_arm <- function(slug, file) {
-  path <- file.path(root, "results", slug, file)
+  path <- file.path(root, "deliverable", "results", slug, file)
   if (!file.exists(path)) return(NULL)
   read_csv(path, show_col_types = FALSE)
 }

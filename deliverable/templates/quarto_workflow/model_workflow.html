@@ -74,7 +74,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="model_workflow_files/libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="model_workflow_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="model_workflow_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="model_workflow_files/libs/bootstrap/bootstrap-b81667f3aee051ed7b76dc6ac24662fb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="model_workflow_files/libs/bootstrap/bootstrap-21414545a5df0d02fe3a1b3c194fc0a5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -113,14 +113,14 @@ WHAT THIS FILE IS
 
   You are NOT required to use this exact methodology. Use whatever models and
   packages you want. The only requirement is that your results land in
-  `results/<arm_slug>/{scoreboard,covariates,predictions}.csv` with the columns
+  `deliverable/results/<arm_slug>/{scoreboard,covariates,predictions}.csv` with the columns
   shown at the bottom of this file. See
   .posit/assistant/skills/dm1-results-integration/SKILL.md for the full contract
   and for instructions your Posit Assistant can follow to wire YOUR results in.
 
 HOW TO RUN THIS FOR A DIFFERENT ARM
-  quarto render templates/quarto_workflow/model_workflow.qmd -P arm:Oligonucleotide
-  quarto render templates/quarto_workflow/model_workflow.qmd -P arm:Tideglusib
+  quarto render deliverable/templates/quarto_workflow/model_workflow.qmd -P arm:Oligonucleotide
+  quarto render deliverable/templates/quarto_workflow/model_workflow.qmd -P arm:Tideglusib
 -->
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)</span>
@@ -149,7 +149,7 @@ HOW TO RUN THIS FOR A DIFFERENT ARM
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>root <span class="ot">&lt;-</span> rprojroot<span class="sc">::</span><span class="fu">find_root</span>(rprojroot<span class="sc">::</span>is_git_root)</span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>train_path <span class="ot">&lt;-</span> <span class="fu">file.path</span>(root, <span class="st">"data"</span>, <span class="st">"derived"</span>, <span class="st">"split"</span>, <span class="st">"training_shared.csv"</span>)</span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>test_path  <span class="ot">&lt;-</span> <span class="fu">file.path</span>(root, <span class="st">"data"</span>, <span class="st">"derived"</span>, <span class="st">"split"</span>, <span class="st">"testing_shared.csv"</span>)</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>out_dir    <span class="ot">&lt;-</span> <span class="fu">file.path</span>(root, <span class="st">"results"</span>, arm_slug)</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>out_dir    <span class="ot">&lt;-</span> <span class="fu">file.path</span>(root, <span class="st">"deliverable"</span>, <span class="st">"results"</span>, arm_slug)</span>
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(out_dir, <span class="at">showWarnings =</span> <span class="cn">FALSE</span>, <span class="at">recursive =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
@@ -317,7 +317,7 @@ HOW TO RUN THIS FOR A DIFFERENT ARM
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Wrote results for"</span>, arm, <span class="st">"to"</span>, out_dir, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Wrote results for Tideglusib to /home/acop/acop26_hackathon_team9/results/tideglusib </code></pre>
+<pre><code>Wrote results for Tideglusib to /home/acop/acop26_hackathon_team9/deliverable/results/tideglusib </code></pre>
 </div>
 </div>
 </section>

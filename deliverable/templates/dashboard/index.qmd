@@ -10,12 +10,12 @@ execute:
 
 <!--
 WHAT THIS FILE IS
-  The evaluation dashboard. Reads from results/<arm_slug>/{scoreboard,covariates,
+  The evaluation dashboard. Reads from deliverable/results/<arm_slug>/{scoreboard,covariates,
   predictions}.csv -- see .posit/assistant/skills/dm1-results-integration/SKILL.md
   for the exact contract. Swap in real team results by writing files matching
   that schema; nothing else here needs to change.
 
-  Render with: quarto render templates/dashboard/index.qmd
+  Render with: quarto render deliverable/templates/dashboard/index.qmd
 -->
 
 ```{r setup}
@@ -30,7 +30,7 @@ root <- rprojroot::find_root(rprojroot::is_git_root)
 arms <- c(mexiletine = "Mexiletine", oligonucleotide = "Oligonucleotide", tideglusib = "Tideglusib")
 
 read_arm <- function(slug, file) {
-  path <- file.path(root, "results", slug, file)
+  path <- file.path(root, "deliverable", "results", slug, file)
   if (!file.exists(path)) return(NULL)
   read_csv(path, show_col_types = FALSE)
 }

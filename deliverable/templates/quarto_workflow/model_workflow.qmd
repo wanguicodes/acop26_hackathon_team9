@@ -17,14 +17,14 @@ WHAT THIS FILE IS
 
   You are NOT required to use this exact methodology. Use whatever models and
   packages you want. The only requirement is that your results land in
-  `results/<arm_slug>/{scoreboard,covariates,predictions}.csv` with the columns
+  `deliverable/results/<arm_slug>/{scoreboard,covariates,predictions}.csv` with the columns
   shown at the bottom of this file. See
   .posit/assistant/skills/dm1-results-integration/SKILL.md for the full contract
   and for instructions your Posit Assistant can follow to wire YOUR results in.
 
 HOW TO RUN THIS FOR A DIFFERENT ARM
-  quarto render templates/quarto_workflow/model_workflow.qmd -P arm:Oligonucleotide
-  quarto render templates/quarto_workflow/model_workflow.qmd -P arm:Tideglusib
+  quarto render deliverable/templates/quarto_workflow/model_workflow.qmd -P arm:Oligonucleotide
+  quarto render deliverable/templates/quarto_workflow/model_workflow.qmd -P arm:Tideglusib
 -->
 
 ```{r setup}
@@ -54,7 +54,7 @@ leaky_cols <- c(
 root <- rprojroot::find_root(rprojroot::is_git_root)
 train_path <- file.path(root, "data", "derived", "split", "training_shared.csv")
 test_path  <- file.path(root, "data", "derived", "split", "testing_shared.csv")
-out_dir    <- file.path(root, "results", arm_slug)
+out_dir    <- file.path(root, "deliverable", "results", arm_slug)
 dir.create(out_dir, showWarnings = FALSE, recursive = TRUE)
 ```
 

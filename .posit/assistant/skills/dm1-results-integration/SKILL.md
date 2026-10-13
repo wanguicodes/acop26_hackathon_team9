@@ -5,8 +5,9 @@ description: Use when a team member has finished (or is working on) their per-ar
 
 # Getting your results into the DM1 hackathon dashboard
 
-This project has a shared evaluation dashboard (`templates/dashboard/index.qmd`,
-with a Shiny alternative at `templates/shiny_app/app.R`) that displays, per arm:
+This project's final shareable output lives in `deliverable/`. It has a shared
+evaluation dashboard (`deliverable/templates/dashboard/index.qmd`, with a Shiny
+alternative at `deliverable/templates/shiny_app/app.R`) that displays, per arm:
 predicted-vs-observed plots, a scoreboard (RMSE/MAE/R2), and a covariate
 comparison table (coefficients vs. ML importance, side by side).
 
@@ -16,10 +17,10 @@ dashboard reads these files; it does not care how they were produced.
 
 ## The results contract
 
-For each arm, write three CSVs to `results/<arm_slug>/` where `arm_slug` is
-`mexiletine`, `oligonucleotide`, or `tideglusib`:
+For each arm, write three CSVs to `deliverable/results/<arm_slug>/` where
+`arm_slug` is `mexiletine`, `oligonucleotide`, or `tideglusib`:
 
-### `results/<arm_slug>/scoreboard.csv`
+### `deliverable/results/<arm_slug>/scoreboard.csv`
 One row per method you fit (covariate or ML, untuned or tuned).
 
 | column | type | notes |
@@ -32,7 +33,7 @@ One row per method you fit (covariate or ML, untuned or tuned).
 | `mae` | numeric | same |
 | `r2` | numeric | same |
 
-### `results/<arm_slug>/covariates.csv`
+### `deliverable/results/<arm_slug>/covariates.csv`
 One row per covariate per method (only covariates with a non-zero
 coefficient/importance -- don't list every covariate that was zeroed out).
 
@@ -45,7 +46,7 @@ coefficient/importance -- don't list every covariate that was zeroed out).
 | `value_type` | string | `"coefficient"`, `"importance"`, or `"shap"` |
 | `rank` | integer | 1 = most important for that method, within that arm |
 
-### `results/<arm_slug>/predictions.csv`
+### `deliverable/results/<arm_slug>/predictions.csv`
 Test-set predictions only (never training predictions -- the dashboard's
 predicted-vs-observed plot should reflect genuine held-out performance).
 
@@ -68,21 +69,24 @@ If someone asks you to "get my results into the dashboard," do this:
    already computed. Never refit using the test set.
 3. Extract their model's coefficients or importance scores, non-zero only,
    ranked by `abs(value)` descending within that method.
-4. Write the three CSVs above to `results/<arm_slug>/`, using
+4. Write the three CSVs above to `deliverable/results/<arm_slug>/`, using
    `write_csv()`/`to_csv()` (R or Python both fine) -- append or overwrite
    rows for their own method; don't delete other methods' rows already in
    the file. If the file already has rows for other methods, read it first,
    filter out any existing rows for THIS method+arm, then bind/concat the
    new rows and rewrite.
 5. Re-render the dashboard to confirm it picks up the new data:
-   `quarto render templates/dashboard/index.qmd`
-6. Do not touch `templates/dashboard/index.qmd`, `templates/shiny_app/app.R`,
-   or other files in `templates/` unless the user explicitly asks for a
+   `quarto render deliverable/templates/dashboard/index.qmd`
+6. Do not touch `deliverable/templates/dashboard/index.qmd`,
+   `deliverable/templates/shiny_app/app.R`, or other files under
+   `deliverable/templates/` unless the user explicitly asks for a
    layout/content change to the app itself -- those are shared files other
    people also depend on.
 
 ## Context: what we agreed on as a team (see AGENTS.md for full detail)
 
+- `deliverable/` is the folder that gets shared/presented at the end -- slides,
+  code, and this dashboard/app all point back to results written here.
 - Continuous outcome only, no binary/responder modeling.
 - `age` is dropped as a predictor everywhere (exact collinearity with
   `age_at_onset` + `disease_duration`).
@@ -91,9 +95,10 @@ If someone asks you to "get my results into the dashboard," do this:
   method must be scored on the same test patients for the scoreboard to be
   valid.
 - A reference implementation (elastic net + random forest) already exists
-  at `templates/quarto_workflow/model_workflow.qmd` and has already written
-  real baseline results to `results/`. Feel free to overwrite/replace this
-  with your own, better methodology -- it's a fallback, not the final answer.
+  at `deliverable/templates/quarto_workflow/model_workflow.qmd` and has
+  already written real baseline results to `deliverable/results/`. Feel free
+  to overwrite/replace this with your own, better methodology -- it's a
+  fallback, not the final answer.
 - You can deviate from any of the above if you have a good reason -- just
   say so (in your code comments or in Slack/standup) so the dashboard
   doesn't silently show inconsistent methodology across arms.
