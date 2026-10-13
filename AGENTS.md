@@ -58,7 +58,8 @@ illustrative cutoff derived from model predictions, not a separate modeling trac
 
 ## Workflow rules
 1. Split each arm separately, stratified by outcome (bin continuous outcome into groups), fixed seed.
-2. Seed: 1234 — adopted from the team's shared split (wangui/split_data.R), not our own choice.
+2. Seed: 8742 (current, as of 2026-10-12 night revision — adopted from the team's shared
+   split, wangui/split_data.R; supersedes the earlier seed-1234 version, not our own choice).
 3. Test set is locked. Use it once, for final evaluation only.
 4. All EDA after the split uses training data only.
 5. Preprocessing is fit on train only and then applied to test.
@@ -80,10 +81,12 @@ illustrative cutoff derived from model predictions, not a separate modeling trac
 ## Technical plan — tidymodels
 1. Split: use the team's shared split, already produced — do NOT re-split.
    `wangui/split_data.R` -> `data/derived/split/training_shared.csv` /
-   `testing_shared.csv`. 80/20 per arm, stratified on the binary responder
-   label (coalesced across arm-specific columns), seed 1234. 398 train / 102
-   test rows total across all 3 arms. All models (ours and teammates') must
-   score against this same testing_shared.csv for the scoreboard to be valid.
+   `testing_shared.csv`. CURRENT version (seed 8742): outliers screened out first
+   (IQR method, 3x threshold, see `data/derived/split/outlier_summary.csv`), then
+   80/20 per arm, stratified on 5 quantile bins of that arm's CONTINUOUS outcome
+   (not the binary responder label — that was the prior version, now superseded).
+   All models (ours and teammates') must score against this same testing_shared.csv
+   for the scoreboard to be valid. Re-check row counts/seed if split_data.R changes again.
 2. Recipes (tailored per model, not one-size-fits-all):
    - Elastic net: `step_normalize(all_numeric_predictors())` + `step_dummy(all_nominal_predictors())`.
    - Random forest: minimal recipe (dummy encoding only; no normalization needed).
@@ -183,3 +186,25 @@ illustrative cutoff derived from model predictions, not a separate modeling trac
   surfacing to the user if a PR-based workflow is still wanted for later contributions.
 - Our own `setup/project-scaffold` branch (with this AGENTS.md) remains local, not pushed,
   per explicit instruction.
+
+## Team repo state as of 2026-10-13 — division of labor
+- **wangui/**: shared split (see above) + full-dataset EDA figures/tables.
+- **inez/**: EDA by arm (boxplots, within-arm correlation heatmaps) + `findings_summary.Rmd`/html
+  (literature context, correlation structure, 3-way EDA comparison).
+- **natiriva_code/**: more EDA (boxplots by responder, scatter vs. outcome) + univariate screening
+  (Mann-Whitney U for covariate-vs-responder, Spearman for covariate-vs-continuous-outcome).
+  Note: her script reads `data/dm1_clinical_trial_dataset.csv`, not `data/source/...` — likely a
+  path bug on her end, not ours to fix.
+- **sharvari/**: ML pipeline framework (Python/scikit-learn + xgboost) — nested CV (outer
+  repeated stratified K-fold scoring, inner K-fold tuning), Random Forest + XGBoost vs. a
+  dummy baseline, final refit on full training set, bootstrap CIs, SHAP-based covariate
+  ranking, and noise-probe columns injected as a reference for validating real signal vs.
+  noise. Well-built, matches our planned metrics (RMSE/MAE/R2) and leakage discipline
+  (explicit LEAKY_COLS list, train/test overlap check). **No outputs committed yet** —
+  this is pipeline code only, not yet run/results.
+- **Gap: no interpretable covariate-model (elastic net/stepwise/LASSO) has been built by
+  anyone yet.** Our own planned elastic-net baseline (see Technical plan above) may need
+  to actually get built by us (or someone) rather than just consumed, if no one else picks
+  it up before the deadline — worth checking in on with the team.
+- Still nothing for our dashboard to consume yet. Re-check repo before starting any
+  dashboard code.
