@@ -1,0 +1,133 @@
+arm,iteration,covariate_set,model,cv_stability_from,shap_method,covariate,rank,mean_abs_shap_train,share_of_total,direction,cv_median_rank,cv_top3_freq
+Tideglusib,1_full,full,rf_untuned,fold SHAP,TreeExplainer,cognitive_function,1,2.0624,0.5893,higher value -> lower prediction (Spearman -0.74),1.0,1.0
+Tideglusib,1_full,full,rf_untuned,fold SHAP,TreeExplainer,muscle_strength,2,0.4169,0.1191,higher value -> lower prediction (Spearman -0.45),2.0,1.0
+Tideglusib,1_full,full,rf_untuned,fold SHAP,TreeExplainer,pr_interval,3,0.2327,0.0665,higher value -> lower prediction (Spearman -0.78),3.0,0.7333
+Tideglusib,1_full,full,rf_untuned,fold SHAP,TreeExplainer,bmi,4,0.0968,0.0277,higher value -> higher prediction (Spearman +0.45),6.0,0.0667
+Tideglusib,1_full,full,rf_untuned,fold SHAP,TreeExplainer,myotonia_severity,5,0.0881,0.0252,higher value -> higher prediction (Spearman +0.82),7.0,0.0667
+Tideglusib,1_full,full,rf_untuned,fold SHAP,TreeExplainer,family_history,6,0.0828,0.0237,levels by mean SHAP: Unknown > No > Yes,7.0,0.1333
+Tideglusib,1_full,full,rf_untuned,fold SHAP,TreeExplainer,insulin_resistance,7,0.0825,0.0236,higher value -> lower prediction (Spearman -0.52),6.0,0.0
+Tideglusib,1_full,full,rf_untuned,fold SHAP,TreeExplainer,age,8,0.0732,0.0209,higher value -> lower prediction (Spearman -0.51),10.0,0.0
+Tideglusib,1_full,full,rf_untuned,fold SHAP,TreeExplainer,somatic_mosaicism_index,9,0.0721,0.0206,higher value -> lower prediction (Spearman -0.51),8.0,0.0
+Tideglusib,1_full,full,rf_untuned,fold SHAP,TreeExplainer,albumin,10,0.0719,0.0205,higher value -> higher prediction (Spearman +0.14),9.0,0.0
+Tideglusib,1_full,full,rf_untuned,fold SHAP,TreeExplainer,age_at_onset,11,0.0613,0.0175,higher value -> lower prediction (Spearman -0.64),12.0,0.0
+Tideglusib,1_full,full,rf_untuned,fold SHAP,TreeExplainer,ck_level,12,0.0459,0.0131,higher value -> lower prediction (Spearman -0.57),11.0,0.0
+Tideglusib,1_full,full,rf_untuned,fold SHAP,TreeExplainer,ctg_repeats,13,0.0431,0.0123,higher value -> higher prediction (Spearman +0.54),12.0,0.0
+Tideglusib,1_full,full,rf_untuned,fold SHAP,TreeExplainer,sex,14,0.0271,0.0077,levels by mean SHAP: Female > Male,14.0,0.0
+Tideglusib,1_full,full,rf_untuned,fold SHAP,TreeExplainer,cataracts,15,0.0266,0.0076,levels by mean SHAP: Yes > No,15.0,0.0
+Tideglusib,1_full,full,rf_untuned,fold SHAP,TreeExplainer,smoking_status,16,0.0163,0.0046,levels by mean SHAP: Former > Current > Never,15.0,0.0
+Tideglusib,1_full,full,rf_tuned,fold SHAP,TreeExplainer,cognitive_function,1,1.8678,0.5587,higher value -> lower prediction (Spearman -0.75),1.0,1.0
+Tideglusib,1_full,full,rf_tuned,fold SHAP,TreeExplainer,muscle_strength,2,0.345,0.1032,higher value -> lower prediction (Spearman -0.47),2.0,0.9333
+Tideglusib,1_full,full,rf_tuned,fold SHAP,TreeExplainer,pr_interval,3,0.2303,0.0689,higher value -> lower prediction (Spearman -0.79),3.0,0.7333
+Tideglusib,1_full,full,rf_tuned,fold SHAP,TreeExplainer,myotonia_severity,4,0.1548,0.0463,higher value -> higher prediction (Spearman +0.82),5.0,0.1333
+Tideglusib,1_full,full,rf_tuned,fold SHAP,TreeExplainer,age,5,0.1004,0.03,higher value -> lower prediction (Spearman -0.67),8.0,0.0
+Tideglusib,1_full,full,rf_tuned,fold SHAP,TreeExplainer,bmi,6,0.0865,0.0259,higher value -> higher prediction (Spearman +0.38),8.0,0.0
+Tideglusib,1_full,full,rf_tuned,fold SHAP,TreeExplainer,age_at_onset,7,0.0768,0.023,higher value -> lower prediction (Spearman -0.62),10.0,0.0
+Tideglusib,1_full,full,rf_tuned,fold SHAP,TreeExplainer,family_history,8,0.0741,0.0222,levels by mean SHAP: Unknown > No > Yes,7.0,0.1333
+Tideglusib,1_full,full,rf_tuned,fold SHAP,TreeExplainer,ctg_repeats,9,0.0741,0.0222,higher value -> higher prediction (Spearman +0.74),8.0,0.0
+Tideglusib,1_full,full,rf_tuned,fold SHAP,TreeExplainer,somatic_mosaicism_index,10,0.0673,0.0201,higher value -> higher prediction (Spearman +0.19),9.0,0.0
+Tideglusib,1_full,full,rf_tuned,fold SHAP,TreeExplainer,insulin_resistance,11,0.0665,0.0199,higher value -> lower prediction (Spearman -0.33),8.0,0.0
+Tideglusib,1_full,full,rf_tuned,fold SHAP,TreeExplainer,albumin,12,0.0648,0.0194,higher value -> lower prediction (Spearman -0.01),10.0,0.0667
+Tideglusib,1_full,full,rf_tuned,fold SHAP,TreeExplainer,ck_level,13,0.0463,0.0138,higher value -> lower prediction (Spearman -0.56),12.0,0.0
+Tideglusib,1_full,full,rf_tuned,fold SHAP,TreeExplainer,cataracts,14,0.0402,0.012,levels by mean SHAP: Yes > No,15.0,0.0
+Tideglusib,1_full,full,rf_tuned,fold SHAP,TreeExplainer,sex,15,0.0288,0.0086,levels by mean SHAP: Female > Male,15.0,0.0
+Tideglusib,1_full,full,rf_tuned,fold SHAP,TreeExplainer,smoking_status,16,0.0196,0.0059,levels by mean SHAP: Current > Former > Never,15.0,0.0
+Tideglusib,1_full,full,xgb_untuned,fold SHAP,TreeExplainer,cognitive_function,1,2.0281,0.4767,higher value -> lower prediction (Spearman -0.72),1.0,1.0
+Tideglusib,1_full,full,xgb_untuned,fold SHAP,TreeExplainer,muscle_strength,2,0.5757,0.1353,higher value -> lower prediction (Spearman -0.50),2.0,1.0
+Tideglusib,1_full,full,xgb_untuned,fold SHAP,TreeExplainer,pr_interval,3,0.2903,0.0682,higher value -> lower prediction (Spearman -0.65),3.0,0.6
+Tideglusib,1_full,full,xgb_untuned,fold SHAP,TreeExplainer,age,4,0.1753,0.0412,higher value -> higher prediction (Spearman +0.00),7.0,0.0
+Tideglusib,1_full,full,xgb_untuned,fold SHAP,TreeExplainer,myotonia_severity,5,0.1623,0.0381,higher value -> higher prediction (Spearman +0.59),10.0,0.0
+Tideglusib,1_full,full,xgb_untuned,fold SHAP,TreeExplainer,albumin,6,0.1563,0.0367,higher value -> higher prediction (Spearman +0.28),6.0,0.1333
+Tideglusib,1_full,full,xgb_untuned,fold SHAP,TreeExplainer,bmi,7,0.1511,0.0355,higher value -> higher prediction (Spearman +0.43),7.0,0.0667
+Tideglusib,1_full,full,xgb_untuned,fold SHAP,TreeExplainer,family_history,8,0.1355,0.0318,levels by mean SHAP: Unknown > No > Yes,6.0,0.1333
+Tideglusib,1_full,full,xgb_untuned,fold SHAP,TreeExplainer,insulin_resistance,9,0.1267,0.0298,higher value -> lower prediction (Spearman -0.34),7.0,0.0
+Tideglusib,1_full,full,xgb_untuned,fold SHAP,TreeExplainer,ck_level,10,0.1004,0.0236,higher value -> lower prediction (Spearman -0.36),12.0,0.0667
+Tideglusib,1_full,full,xgb_untuned,fold SHAP,TreeExplainer,age_at_onset,11,0.0848,0.0199,higher value -> lower prediction (Spearman -0.64),12.0,0.0
+Tideglusib,1_full,full,xgb_untuned,fold SHAP,TreeExplainer,somatic_mosaicism_index,12,0.0787,0.0185,higher value -> lower prediction (Spearman -0.44),9.0,0.0
+Tideglusib,1_full,full,xgb_untuned,fold SHAP,TreeExplainer,ctg_repeats,13,0.0786,0.0185,higher value -> higher prediction (Spearman +0.44),9.0,0.0
+Tideglusib,1_full,full,xgb_untuned,fold SHAP,TreeExplainer,cataracts,14,0.0443,0.0104,levels by mean SHAP: Yes > No,14.0,0.0
+Tideglusib,1_full,full,xgb_untuned,fold SHAP,TreeExplainer,smoking_status,15,0.0381,0.009,levels by mean SHAP: Former > Never > Current,14.0,0.0
+Tideglusib,1_full,full,xgb_untuned,fold SHAP,TreeExplainer,sex,16,0.0286,0.0067,levels by mean SHAP: Female > Male,15.0,0.0
+Tideglusib,1_full,full,xgb_tuned,fold SHAP,TreeExplainer,cognitive_function,1,1.752,0.606,higher value -> lower prediction (Spearman -0.90),1.0,1.0
+Tideglusib,1_full,full,xgb_tuned,fold SHAP,TreeExplainer,muscle_strength,2,0.4642,0.1605,higher value -> lower prediction (Spearman -0.32),2.0,1.0
+Tideglusib,1_full,full,xgb_tuned,fold SHAP,TreeExplainer,pr_interval,3,0.2689,0.093,higher value -> lower prediction (Spearman -0.92),3.0,0.8
+Tideglusib,1_full,full,xgb_tuned,fold SHAP,TreeExplainer,myotonia_severity,4,0.1275,0.0441,higher value -> higher prediction (Spearman +0.97),5.0,0.1333
+Tideglusib,1_full,full,xgb_tuned,fold SHAP,TreeExplainer,age,5,0.0632,0.0219,higher value -> lower prediction (Spearman -0.92),6.0,0.0667
+Tideglusib,1_full,full,xgb_tuned,fold SHAP,TreeExplainer,cataracts,6,0.0461,0.016,levels by mean SHAP: Yes > No,7.0,0.0
+Tideglusib,1_full,full,xgb_tuned,fold SHAP,TreeExplainer,ck_level,7,0.0429,0.0148,higher value -> lower prediction (Spearman -0.96),9.0,0.0
+Tideglusib,1_full,full,xgb_tuned,fold SHAP,TreeExplainer,somatic_mosaicism_index,8,0.04,0.0138,higher value -> higher prediction (Spearman +0.81),8.0,0.0
+Tideglusib,1_full,full,xgb_tuned,fold SHAP,TreeExplainer,ctg_repeats,9,0.0282,0.0098,higher value -> higher prediction (Spearman +0.93),9.0,0.0
+Tideglusib,1_full,full,xgb_tuned,fold SHAP,TreeExplainer,albumin,10,0.0254,0.0088,higher value -> higher prediction (Spearman +0.77),10.0,0.0
+Tideglusib,1_full,full,xgb_tuned,fold SHAP,TreeExplainer,age_at_onset,11,0.0169,0.0058,higher value -> lower prediction (Spearman -0.97),12.0,0.0
+Tideglusib,1_full,full,xgb_tuned,fold SHAP,TreeExplainer,insulin_resistance,12,0.0085,0.0029,higher value -> lower prediction (Spearman -0.90),10.0,0.0
+Tideglusib,1_full,full,xgb_tuned,fold SHAP,TreeExplainer,family_history,13,0.005,0.0017,levels by mean SHAP: Unknown > No > Yes,12.0,0.0
+Tideglusib,1_full,full,xgb_tuned,fold SHAP,TreeExplainer,bmi,14,0.0024,0.0008,higher value -> higher prediction (Spearman +0.58),11.0,0.0
+Tideglusib,1_full,full,xgb_tuned,fold SHAP,TreeExplainer,sex,15,0.0,0.0,levels by mean SHAP: Female > Male,15.0,0.0
+Tideglusib,1_full,full,xgb_tuned,fold SHAP,TreeExplainer,smoking_status,16,0.0,0.0,levels by mean SHAP: Current > Former > Never,15.0,0.0
+Tideglusib,2_reduced,reduced,rf_untuned,fold SHAP,TreeExplainer,cognitive_function,1,2.0314,0.6206,higher value -> lower prediction (Spearman -0.72),1.0,1.0
+Tideglusib,2_reduced,reduced,rf_untuned,fold SHAP,TreeExplainer,muscle_strength,2,0.6414,0.1959,higher value -> lower prediction (Spearman -0.44),2.0,1.0
+Tideglusib,2_reduced,reduced,rf_untuned,fold SHAP,TreeExplainer,pr_interval,3,0.3293,0.1006,higher value -> lower prediction (Spearman -0.66),3.0,0.6
+Tideglusib,2_reduced,reduced,rf_untuned,fold SHAP,TreeExplainer,age,4,0.2714,0.0829,higher value -> lower prediction (Spearman -0.69),4.0,0.4
+Tideglusib,2_reduced,reduced,rf_tuned,fold SHAP,TreeExplainer,cognitive_function,1,1.8164,0.5753,higher value -> lower prediction (Spearman -0.74),1.0,1.0
+Tideglusib,2_reduced,reduced,rf_tuned,fold SHAP,TreeExplainer,muscle_strength,2,0.6452,0.2043,higher value -> lower prediction (Spearman -0.46),2.0,1.0
+Tideglusib,2_reduced,reduced,rf_tuned,fold SHAP,TreeExplainer,pr_interval,3,0.3536,0.112,higher value -> lower prediction (Spearman -0.70),4.0,0.4667
+Tideglusib,2_reduced,reduced,rf_tuned,fold SHAP,TreeExplainer,age,4,0.3423,0.1084,higher value -> lower prediction (Spearman -0.73),3.0,0.5333
+Tideglusib,2_reduced,reduced,xgb_untuned,fold SHAP,TreeExplainer,cognitive_function,1,1.9095,0.5386,higher value -> lower prediction (Spearman -0.70),1.0,1.0
+Tideglusib,2_reduced,reduced,xgb_untuned,fold SHAP,TreeExplainer,muscle_strength,2,0.8143,0.2297,higher value -> lower prediction (Spearman -0.39),2.0,1.0
+Tideglusib,2_reduced,reduced,xgb_untuned,fold SHAP,TreeExplainer,pr_interval,3,0.5035,0.142,higher value -> lower prediction (Spearman -0.56),3.0,0.7333
+Tideglusib,2_reduced,reduced,xgb_untuned,fold SHAP,TreeExplainer,age,4,0.3179,0.0897,higher value -> lower prediction (Spearman -0.52),4.0,0.2667
+Tideglusib,2_reduced,reduced,xgb_tuned,fold SHAP,TreeExplainer,cognitive_function,1,1.8542,0.5827,higher value -> lower prediction (Spearman -0.75),1.0,1.0
+Tideglusib,2_reduced,reduced,xgb_tuned,fold SHAP,TreeExplainer,muscle_strength,2,0.7153,0.2248,higher value -> lower prediction (Spearman -0.52),2.0,1.0
+Tideglusib,2_reduced,reduced,xgb_tuned,fold SHAP,TreeExplainer,pr_interval,3,0.3624,0.1139,higher value -> lower prediction (Spearman -0.94),3.0,0.7333
+Tideglusib,2_reduced,reduced,xgb_tuned,fold SHAP,TreeExplainer,age,4,0.2501,0.0786,higher value -> lower prediction (Spearman -0.95),4.0,0.2667
+Tideglusib,3_extended,full,enet_tuned,fold permutation importance,Permutation (model-agnostic),cognitive_function,1,1.1679,0.7918,higher value -> lower prediction (Spearman -1.00),1.0,1.0
+Tideglusib,3_extended,full,enet_tuned,fold permutation importance,Permutation (model-agnostic),ctg_repeats,2,0.279,0.1892,higher value -> higher prediction (Spearman +1.00),2.0,0.8
+Tideglusib,3_extended,full,enet_tuned,fold permutation importance,Permutation (model-agnostic),pr_interval,3,0.0281,0.019,higher value -> lower prediction (Spearman -1.00),9.0,0.4
+Tideglusib,3_extended,full,enet_tuned,fold permutation importance,Permutation (model-agnostic),somatic_mosaicism_index,4,0.0,0.0,no variation,9.0,0.0667
+Tideglusib,3_extended,full,enet_tuned,fold permutation importance,Permutation (model-agnostic),age_at_onset,5,0.0,0.0,no variation,9.0,0.0667
+Tideglusib,3_extended,full,enet_tuned,fold permutation importance,Permutation (model-agnostic),age,6,0.0,0.0,no variation,9.0,0.2667
+Tideglusib,3_extended,full,enet_tuned,fold permutation importance,Permutation (model-agnostic),muscle_strength,7,0.0,0.0,no variation,9.0,0.0
+Tideglusib,3_extended,full,enet_tuned,fold permutation importance,Permutation (model-agnostic),myotonia_severity,8,0.0,0.0,no variation,9.0,0.1333
+Tideglusib,3_extended,full,enet_tuned,fold permutation importance,Permutation (model-agnostic),ck_level,9,0.0,0.0,no variation,9.5,0.0
+Tideglusib,3_extended,full,enet_tuned,fold permutation importance,Permutation (model-agnostic),insulin_resistance,10,0.0,0.0,no variation,9.0,0.0
+Tideglusib,3_extended,full,enet_tuned,fold permutation importance,Permutation (model-agnostic),albumin,11,0.0,0.0,no variation,9.0,0.0
+Tideglusib,3_extended,full,enet_tuned,fold permutation importance,Permutation (model-agnostic),bmi,12,0.0,0.0,no variation,9.5,0.0
+Tideglusib,3_extended,full,enet_tuned,fold permutation importance,Permutation (model-agnostic),sex,13,0.0,0.0,levels by mean SHAP: Female > Male,9.0,0.0
+Tideglusib,3_extended,full,enet_tuned,fold permutation importance,Permutation (model-agnostic),family_history,14,0.0,0.0,levels by mean SHAP: No > Unknown > Yes,9.0,0.0
+Tideglusib,3_extended,full,enet_tuned,fold permutation importance,Permutation (model-agnostic),cataracts,15,0.0,0.0,levels by mean SHAP: No > Yes,9.0,0.0
+Tideglusib,3_extended,full,enet_tuned,fold permutation importance,Permutation (model-agnostic),smoking_status,16,0.0,0.0,levels by mean SHAP: Current > Former > Never,9.0,0.0
+Tideglusib,3_extended,full,spline_ridge_tuned,fold permutation importance,Permutation (model-agnostic),cognitive_function,1,1.1626,0.2715,higher value -> lower prediction (Spearman -0.99),1.0,1.0
+Tideglusib,3_extended,full,spline_ridge_tuned,fold permutation importance,Permutation (model-agnostic),muscle_strength,2,0.512,0.1196,higher value -> lower prediction (Spearman -0.43),2.0,1.0
+Tideglusib,3_extended,full,spline_ridge_tuned,fold permutation importance,Permutation (model-agnostic),age,3,0.4442,0.1037,higher value -> lower prediction (Spearman -0.94),4.0,0.4
+Tideglusib,3_extended,full,spline_ridge_tuned,fold permutation importance,Permutation (model-agnostic),cataracts,4,0.3825,0.0893,levels by mean SHAP: Yes > No,5.0,0.3333
+Tideglusib,3_extended,full,spline_ridge_tuned,fold permutation importance,Permutation (model-agnostic),pr_interval,5,0.354,0.0827,higher value -> lower prediction (Spearman -0.97),5.0,0.1333
+Tideglusib,3_extended,full,spline_ridge_tuned,fold permutation importance,Permutation (model-agnostic),ck_level,6,0.3348,0.0782,higher value -> lower prediction (Spearman -0.93),6.0,0.1333
+Tideglusib,3_extended,full,spline_ridge_tuned,fold permutation importance,Permutation (model-agnostic),myotonia_severity,7,0.2309,0.0539,higher value -> higher prediction (Spearman +0.87),6.0,0.0
+Tideglusib,3_extended,full,spline_ridge_tuned,fold permutation importance,Permutation (model-agnostic),somatic_mosaicism_index,8,0.1357,0.0317,higher value -> lower prediction (Spearman -0.04),10.0,0.0
+Tideglusib,3_extended,full,spline_ridge_tuned,fold permutation importance,Permutation (model-agnostic),albumin,9,0.1097,0.0256,higher value -> higher prediction (Spearman +0.26),13.0,0.0
+Tideglusib,3_extended,full,spline_ridge_tuned,fold permutation importance,Permutation (model-agnostic),bmi,10,0.1091,0.0255,higher value -> lower prediction (Spearman -0.36),12.0,0.0
+Tideglusib,3_extended,full,spline_ridge_tuned,fold permutation importance,Permutation (model-agnostic),age_at_onset,11,0.1083,0.0253,higher value -> higher prediction (Spearman +0.74),10.0,0.0
+Tideglusib,3_extended,full,spline_ridge_tuned,fold permutation importance,Permutation (model-agnostic),smoking_status,12,0.1055,0.0246,levels by mean SHAP: Former > Current > Never,12.0,0.0
+Tideglusib,3_extended,full,spline_ridge_tuned,fold permutation importance,Permutation (model-agnostic),insulin_resistance,13,0.0975,0.0228,higher value -> higher prediction (Spearman +0.53),12.0,0.0
+Tideglusib,3_extended,full,spline_ridge_tuned,fold permutation importance,Permutation (model-agnostic),family_history,14,0.0869,0.0203,levels by mean SHAP: No > Unknown > Yes,12.0,0.0
+Tideglusib,3_extended,full,spline_ridge_tuned,fold permutation importance,Permutation (model-agnostic),ctg_repeats,15,0.0734,0.0171,higher value -> higher prediction (Spearman +0.82),11.0,0.0
+Tideglusib,3_extended,full,spline_ridge_tuned,fold permutation importance,Permutation (model-agnostic),sex,16,0.0345,0.0081,levels by mean SHAP: Female > Male,9.0,0.0
+Tideglusib,3_extended,full,svr_tuned,fold permutation importance,Permutation (model-agnostic),cognitive_function,1,0.9016,0.319,higher value -> lower prediction (Spearman -1.00),1.0,1.0
+Tideglusib,3_extended,full,svr_tuned,fold permutation importance,Permutation (model-agnostic),myotonia_severity,2,0.3184,0.1127,higher value -> higher prediction (Spearman +1.00),5.0,0.3333
+Tideglusib,3_extended,full,svr_tuned,fold permutation importance,Permutation (model-agnostic),pr_interval,3,0.2899,0.1026,higher value -> lower prediction (Spearman -1.00),7.0,0.1333
+Tideglusib,3_extended,full,svr_tuned,fold permutation importance,Permutation (model-agnostic),age,4,0.203,0.0718,higher value -> lower prediction (Spearman -0.99),5.0,0.4
+Tideglusib,3_extended,full,svr_tuned,fold permutation importance,Permutation (model-agnostic),ctg_repeats,5,0.1957,0.0692,higher value -> higher prediction (Spearman +0.99),10.0,0.2667
+Tideglusib,3_extended,full,svr_tuned,fold permutation importance,Permutation (model-agnostic),cataracts,6,0.1916,0.0678,levels by mean SHAP: Yes > No,9.0,0.1333
+Tideglusib,3_extended,full,svr_tuned,fold permutation importance,Permutation (model-agnostic),ck_level,7,0.1609,0.0569,higher value -> lower prediction (Spearman -0.96),9.0,0.0667
+Tideglusib,3_extended,full,svr_tuned,fold permutation importance,Permutation (model-agnostic),sex,8,0.1017,0.036,levels by mean SHAP: Male > Female,9.0,0.0
+Tideglusib,3_extended,full,svr_tuned,fold permutation importance,Permutation (model-agnostic),smoking_status,9,0.0856,0.0303,levels by mean SHAP: Former > Current > Never,11.0,0.0667
+Tideglusib,3_extended,full,svr_tuned,fold permutation importance,Permutation (model-agnostic),insulin_resistance,10,0.0655,0.0232,higher value -> lower prediction (Spearman -0.01),11.0,0.0
+Tideglusib,3_extended,full,svr_tuned,fold permutation importance,Permutation (model-agnostic),age_at_onset,11,0.0653,0.0231,higher value -> higher prediction (Spearman +0.92),11.0,0.0
+Tideglusib,3_extended,full,svr_tuned,fold permutation importance,Permutation (model-agnostic),family_history,12,0.0627,0.0222,levels by mean SHAP: Unknown > No > Yes,11.0,0.0
+Tideglusib,3_extended,full,svr_tuned,fold permutation importance,Permutation (model-agnostic),albumin,13,0.0612,0.0216,higher value -> lower prediction (Spearman -0.97),9.0,0.0
+Tideglusib,3_extended,full,svr_tuned,fold permutation importance,Permutation (model-agnostic),muscle_strength,14,0.0601,0.0213,higher value -> lower prediction (Spearman -0.57),5.0,0.4667
+Tideglusib,3_extended,full,svr_tuned,fold permutation importance,Permutation (model-agnostic),bmi,15,0.0326,0.0115,higher value -> lower prediction (Spearman -0.32),10.0,0.1333
+Tideglusib,3_extended,full,svr_tuned,fold permutation importance,Permutation (model-agnostic),somatic_mosaicism_index,16,0.0305,0.0108,higher value -> lower prediction (Spearman -0.57),9.0,0.0
+Tideglusib,3_extended,reduced,svr_tuned,fold permutation importance,Permutation (model-agnostic),cognitive_function,1,1.2201,0.4982,higher value -> lower prediction (Spearman -0.98),1.0,1.0
+Tideglusib,3_extended,reduced,svr_tuned,fold permutation importance,Permutation (model-agnostic),muscle_strength,2,0.4401,0.1797,higher value -> lower prediction (Spearman -0.35),2.0,1.0
+Tideglusib,3_extended,reduced,svr_tuned,fold permutation importance,Permutation (model-agnostic),age,3,0.44,0.1797,higher value -> lower prediction (Spearman -0.93),3.0,0.6667
+Tideglusib,3_extended,reduced,svr_tuned,fold permutation importance,Permutation (model-agnostic),pr_interval,4,0.349,0.1425,higher value -> lower prediction (Spearman -0.85),4.0,0.3333

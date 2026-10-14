@@ -1,0 +1,116 @@
+arm,iteration,covariate_set,model,cv_stability_from,shap_method,covariate,rank,mean_abs_shap_train,share_of_total,direction,cv_median_rank,cv_top3_freq
+Mexiletine,1_full,full,rf_untuned,fold SHAP,TreeExplainer,myotonia_severity,1,0.7498,0.6457,higher value -> lower prediction (Spearman -0.98),1.0,1.0
+Mexiletine,1_full,full,rf_untuned,fold SHAP,TreeExplainer,ctg_repeats,2,0.1108,0.0954,higher value -> lower prediction (Spearman -0.89),2.0,1.0
+Mexiletine,1_full,full,rf_untuned,fold SHAP,TreeExplainer,family_history,3,0.042,0.0361,levels by mean SHAP: No > Unknown > Yes,7.0,0.0667
+Mexiletine,1_full,full,rf_untuned,fold SHAP,TreeExplainer,muscle_strength,4,0.0374,0.0322,higher value -> lower prediction (Spearman -0.56),5.0,0.1333
+Mexiletine,1_full,full,rf_untuned,fold SHAP,TreeExplainer,ck_level,5,0.0333,0.0287,higher value -> lower prediction (Spearman -0.81),6.0,0.2
+Mexiletine,1_full,full,rf_untuned,fold SHAP,TreeExplainer,somatic_mosaicism_index,6,0.0318,0.0274,higher value -> higher prediction (Spearman +0.40),7.0,0.1333
+Mexiletine,1_full,full,rf_untuned,fold SHAP,TreeExplainer,cognitive_function,7,0.0295,0.0254,higher value -> higher prediction (Spearman +0.09),8.0,0.0667
+Mexiletine,1_full,full,rf_untuned,fold SHAP,TreeExplainer,bmi,8,0.0268,0.0231,higher value -> lower prediction (Spearman -0.32),9.0,0.2
+Mexiletine,1_full,full,rf_untuned,fold SHAP,TreeExplainer,pr_interval,9,0.0252,0.0217,higher value -> lower prediction (Spearman -0.22),8.0,0.1333
+Mexiletine,1_full,full,rf_untuned,fold SHAP,TreeExplainer,age,10,0.0214,0.0184,higher value -> higher prediction (Spearman +0.52),10.0,0.0
+Mexiletine,1_full,full,rf_untuned,fold SHAP,TreeExplainer,insulin_resistance,11,0.0179,0.0154,higher value -> higher prediction (Spearman +0.19),8.0,0.0667
+Mexiletine,1_full,full,rf_untuned,fold SHAP,TreeExplainer,age_at_onset,12,0.0166,0.0143,higher value -> lower prediction (Spearman -0.68),9.0,0.0
+Mexiletine,1_full,full,rf_untuned,fold SHAP,TreeExplainer,smoking_status,13,0.0084,0.0072,levels by mean SHAP: Current > Former > Never,13.0,0.0
+Mexiletine,1_full,full,rf_untuned,fold SHAP,TreeExplainer,sex,14,0.0075,0.0065,levels by mean SHAP: Female > Male,14.0,0.0
+Mexiletine,1_full,full,rf_untuned,fold SHAP,TreeExplainer,cataracts,15,0.003,0.0026,levels by mean SHAP: No > Yes,15.0,0.0
+Mexiletine,1_full,full,rf_tuned,fold SHAP,TreeExplainer,myotonia_severity,1,0.7409,0.6931,higher value -> lower prediction (Spearman -0.99),1.0,1.0
+Mexiletine,1_full,full,rf_tuned,fold SHAP,TreeExplainer,ctg_repeats,2,0.1088,0.1018,higher value -> lower prediction (Spearman -0.93),2.0,1.0
+Mexiletine,1_full,full,rf_tuned,fold SHAP,TreeExplainer,ck_level,3,0.0387,0.0362,higher value -> lower prediction (Spearman -0.89),6.0,0.2
+Mexiletine,1_full,full,rf_tuned,fold SHAP,TreeExplainer,family_history,4,0.0337,0.0315,levels by mean SHAP: Unknown > No > Yes,8.0,0.1333
+Mexiletine,1_full,full,rf_tuned,fold SHAP,TreeExplainer,somatic_mosaicism_index,5,0.024,0.0224,higher value -> higher prediction (Spearman +0.41),5.0,0.0667
+Mexiletine,1_full,full,rf_tuned,fold SHAP,TreeExplainer,muscle_strength,6,0.0209,0.0195,higher value -> lower prediction (Spearman -0.76),7.0,0.0
+Mexiletine,1_full,full,rf_tuned,fold SHAP,TreeExplainer,pr_interval,7,0.0181,0.0169,higher value -> lower prediction (Spearman -0.40),8.0,0.0667
+Mexiletine,1_full,full,rf_tuned,fold SHAP,TreeExplainer,age,8,0.0179,0.0167,higher value -> higher prediction (Spearman +0.48),5.0,0.3333
+Mexiletine,1_full,full,rf_tuned,fold SHAP,TreeExplainer,cognitive_function,9,0.0168,0.0157,higher value -> lower prediction (Spearman -0.03),6.0,0.1333
+Mexiletine,1_full,full,rf_tuned,fold SHAP,TreeExplainer,bmi,10,0.013,0.0122,higher value -> lower prediction (Spearman -0.76),10.0,0.0667
+Mexiletine,1_full,full,rf_tuned,fold SHAP,TreeExplainer,smoking_status,11,0.0093,0.0087,levels by mean SHAP: Current > Former > Never,13.0,0.0
+Mexiletine,1_full,full,rf_tuned,fold SHAP,TreeExplainer,sex,12,0.0093,0.0087,levels by mean SHAP: Female > Male,11.0,0.0
+Mexiletine,1_full,full,rf_tuned,fold SHAP,TreeExplainer,age_at_onset,13,0.0079,0.0074,higher value -> lower prediction (Spearman -0.71),10.0,0.0
+Mexiletine,1_full,full,rf_tuned,fold SHAP,TreeExplainer,insulin_resistance,14,0.0078,0.0073,higher value -> higher prediction (Spearman +0.44),13.0,0.0
+Mexiletine,1_full,full,rf_tuned,fold SHAP,TreeExplainer,cataracts,15,0.002,0.0019,levels by mean SHAP: Yes > No,15.0,0.0
+Mexiletine,1_full,full,xgb_untuned,fold SHAP,TreeExplainer,myotonia_severity,1,0.6465,0.4357,higher value -> lower prediction (Spearman -0.95),1.0,1.0
+Mexiletine,1_full,full,xgb_untuned,fold SHAP,TreeExplainer,ctg_repeats,2,0.2708,0.1825,higher value -> lower prediction (Spearman -0.73),2.0,0.9333
+Mexiletine,1_full,full,xgb_untuned,fold SHAP,TreeExplainer,family_history,3,0.1036,0.0698,levels by mean SHAP: No > Unknown > Yes,5.0,0.2667
+Mexiletine,1_full,full,xgb_untuned,fold SHAP,TreeExplainer,muscle_strength,4,0.071,0.0479,higher value -> lower prediction (Spearman -0.46),5.0,0.2
+Mexiletine,1_full,full,xgb_untuned,fold SHAP,TreeExplainer,cognitive_function,5,0.0697,0.047,higher value -> higher prediction (Spearman +0.18),8.0,0.1333
+Mexiletine,1_full,full,xgb_untuned,fold SHAP,TreeExplainer,ck_level,6,0.0519,0.035,higher value -> lower prediction (Spearman -0.55),7.0,0.2
+Mexiletine,1_full,full,xgb_untuned,fold SHAP,TreeExplainer,bmi,7,0.0494,0.0333,higher value -> lower prediction (Spearman -0.34),8.0,0.1333
+Mexiletine,1_full,full,xgb_untuned,fold SHAP,TreeExplainer,age,8,0.0474,0.0319,higher value -> higher prediction (Spearman +0.66),8.0,0.0
+Mexiletine,1_full,full,xgb_untuned,fold SHAP,TreeExplainer,somatic_mosaicism_index,9,0.0428,0.0289,higher value -> higher prediction (Spearman +0.49),8.0,0.0
+Mexiletine,1_full,full,xgb_untuned,fold SHAP,TreeExplainer,pr_interval,10,0.0322,0.0217,higher value -> lower prediction (Spearman -0.41),7.0,0.0667
+Mexiletine,1_full,full,xgb_untuned,fold SHAP,TreeExplainer,insulin_resistance,11,0.0268,0.0181,higher value -> higher prediction (Spearman +0.22),10.0,0.0
+Mexiletine,1_full,full,xgb_untuned,fold SHAP,TreeExplainer,sex,12,0.0256,0.0172,levels by mean SHAP: Female > Male,14.0,0.0
+Mexiletine,1_full,full,xgb_untuned,fold SHAP,TreeExplainer,age_at_onset,13,0.0206,0.0139,higher value -> lower prediction (Spearman -0.47),12.0,0.0
+Mexiletine,1_full,full,xgb_untuned,fold SHAP,TreeExplainer,smoking_status,14,0.0177,0.0119,levels by mean SHAP: Current > Former > Never,13.0,0.0667
+Mexiletine,1_full,full,xgb_untuned,fold SHAP,TreeExplainer,cataracts,15,0.0079,0.0053,levels by mean SHAP: No > Yes,14.0,0.0
+Mexiletine,1_full,full,xgb_tuned,fold SHAP,TreeExplainer,myotonia_severity,1,0.5759,0.5726,higher value -> lower prediction (Spearman -0.99),1.0,1.0
+Mexiletine,1_full,full,xgb_tuned,fold SHAP,TreeExplainer,ctg_repeats,2,0.1879,0.1868,higher value -> lower prediction (Spearman -0.93),2.0,1.0
+Mexiletine,1_full,full,xgb_tuned,fold SHAP,TreeExplainer,muscle_strength,3,0.0735,0.0731,higher value -> lower prediction (Spearman -0.60),3.0,0.5333
+Mexiletine,1_full,full,xgb_tuned,fold SHAP,TreeExplainer,somatic_mosaicism_index,4,0.0376,0.0374,higher value -> lower prediction (Spearman -0.31),7.0,0.0
+Mexiletine,1_full,full,xgb_tuned,fold SHAP,TreeExplainer,pr_interval,5,0.0312,0.031,higher value -> higher prediction (Spearman +0.70),6.0,0.1333
+Mexiletine,1_full,full,xgb_tuned,fold SHAP,TreeExplainer,cognitive_function,6,0.0297,0.0295,higher value -> higher prediction (Spearman +0.69),6.0,0.2
+Mexiletine,1_full,full,xgb_tuned,fold SHAP,TreeExplainer,bmi,7,0.0225,0.0224,higher value -> higher prediction (Spearman +0.06),8.0,0.0667
+Mexiletine,1_full,full,xgb_tuned,fold SHAP,TreeExplainer,sex,8,0.0116,0.0115,levels by mean SHAP: Female > Male,9.0,0.0667
+Mexiletine,1_full,full,xgb_tuned,fold SHAP,TreeExplainer,age_at_onset,9,0.0089,0.0089,higher value -> higher prediction (Spearman +0.43),8.0,0.0
+Mexiletine,1_full,full,xgb_tuned,fold SHAP,TreeExplainer,age,10,0.0076,0.0076,higher value -> higher prediction (Spearman +0.21),7.0,0.0
+Mexiletine,1_full,full,xgb_tuned,fold SHAP,TreeExplainer,family_history,11,0.0075,0.0075,levels by mean SHAP: No > Unknown > Yes,11.0,0.0
+Mexiletine,1_full,full,xgb_tuned,fold SHAP,TreeExplainer,ck_level,12,0.006,0.0059,higher value -> lower prediction (Spearman -0.63),10.0,0.0
+Mexiletine,1_full,full,xgb_tuned,fold SHAP,TreeExplainer,smoking_status,13,0.0058,0.0058,levels by mean SHAP: Current > Former > Never,13.0,0.0
+Mexiletine,1_full,full,xgb_tuned,fold SHAP,TreeExplainer,insulin_resistance,14,0.0,0.0,no variation,13.0,0.0
+Mexiletine,1_full,full,xgb_tuned,fold SHAP,TreeExplainer,cataracts,15,0.0,0.0,levels by mean SHAP: No > Yes,15.0,0.0
+Mexiletine,2_reduced,reduced,rf_untuned,fold SHAP,TreeExplainer,myotonia_severity,1,0.8004,0.8146,higher value -> lower prediction (Spearman -0.97),1.0,1.0
+Mexiletine,2_reduced,reduced,rf_untuned,fold SHAP,TreeExplainer,ctg_repeats,2,0.1822,0.1854,higher value -> lower prediction (Spearman -0.37),2.0,1.0
+Mexiletine,2_reduced,reduced,rf_tuned,fold SHAP,TreeExplainer,myotonia_severity,1,0.4878,0.5551,higher value -> lower prediction (Spearman -0.98),1.0,1.0
+Mexiletine,2_reduced,reduced,rf_tuned,fold SHAP,TreeExplainer,ctg_repeats,2,0.3909,0.4449,higher value -> lower prediction (Spearman -0.90),2.0,1.0
+Mexiletine,2_reduced,reduced,xgb_untuned,fold SHAP,TreeExplainer,myotonia_severity,1,0.8393,0.7153,higher value -> lower prediction (Spearman -0.94),1.0,1.0
+Mexiletine,2_reduced,reduced,xgb_untuned,fold SHAP,TreeExplainer,ctg_repeats,2,0.3341,0.2847,higher value -> lower prediction (Spearman -0.17),2.0,1.0
+Mexiletine,2_reduced,reduced,xgb_tuned,fold SHAP,TreeExplainer,myotonia_severity,1,0.7175,0.8167,higher value -> lower prediction (Spearman -0.99),1.0,1.0
+Mexiletine,2_reduced,reduced,xgb_tuned,fold SHAP,TreeExplainer,ctg_repeats,2,0.161,0.1833,higher value -> lower prediction (Spearman -0.75),2.0,1.0
+Mexiletine,3_extended,full,enet_tuned,fold permutation importance,Permutation (model-agnostic),myotonia_severity,1,0.7176,1.0,higher value -> lower prediction (Spearman -1.00),1.0,1.0
+Mexiletine,3_extended,full,enet_tuned,fold permutation importance,Permutation (model-agnostic),somatic_mosaicism_index,2,0.0,0.0,no variation,8.5,0.0
+Mexiletine,3_extended,full,enet_tuned,fold permutation importance,Permutation (model-agnostic),ctg_repeats,3,0.0,0.0,no variation,8.5,0.1333
+Mexiletine,3_extended,full,enet_tuned,fold permutation importance,Permutation (model-agnostic),age,4,0.0,0.0,no variation,8.5,0.0
+Mexiletine,3_extended,full,enet_tuned,fold permutation importance,Permutation (model-agnostic),age_at_onset,5,0.0,0.0,no variation,8.5,0.0667
+Mexiletine,3_extended,full,enet_tuned,fold permutation importance,Permutation (model-agnostic),muscle_strength,6,0.0,0.0,no variation,8.5,0.0
+Mexiletine,3_extended,full,enet_tuned,fold permutation importance,Permutation (model-agnostic),pr_interval,7,0.0,0.0,no variation,8.5,0.0
+Mexiletine,3_extended,full,enet_tuned,fold permutation importance,Permutation (model-agnostic),cognitive_function,8,0.0,0.0,no variation,8.5,0.3333
+Mexiletine,3_extended,full,enet_tuned,fold permutation importance,Permutation (model-agnostic),ck_level,9,0.0,0.0,no variation,8.5,0.0
+Mexiletine,3_extended,full,enet_tuned,fold permutation importance,Permutation (model-agnostic),insulin_resistance,10,0.0,0.0,no variation,8.5,0.0
+Mexiletine,3_extended,full,enet_tuned,fold permutation importance,Permutation (model-agnostic),bmi,11,0.0,0.0,no variation,8.5,0.0
+Mexiletine,3_extended,full,enet_tuned,fold permutation importance,Permutation (model-agnostic),sex,12,0.0,0.0,levels by mean SHAP: Female > Male,8.5,0.0667
+Mexiletine,3_extended,full,enet_tuned,fold permutation importance,Permutation (model-agnostic),family_history,13,0.0,0.0,levels by mean SHAP: No > Unknown > Yes,8.5,0.0667
+Mexiletine,3_extended,full,enet_tuned,fold permutation importance,Permutation (model-agnostic),cataracts,14,0.0,0.0,levels by mean SHAP: No > Yes,8.5,0.0
+Mexiletine,3_extended,full,enet_tuned,fold permutation importance,Permutation (model-agnostic),smoking_status,15,0.0,0.0,levels by mean SHAP: Current > Former > Never,8.5,0.0
+Mexiletine,3_extended,full,spline_ridge_tuned,fold permutation importance,Permutation (model-agnostic),myotonia_severity,1,0.7254,0.3299,higher value -> lower prediction (Spearman -1.00),1.0,1.0
+Mexiletine,3_extended,full,spline_ridge_tuned,fold permutation importance,Permutation (model-agnostic),muscle_strength,2,0.1734,0.0789,higher value -> lower prediction (Spearman -0.47),4.0,0.4667
+Mexiletine,3_extended,full,spline_ridge_tuned,fold permutation importance,Permutation (model-agnostic),sex,3,0.1506,0.0685,levels by mean SHAP: Female > Male,5.0,0.3333
+Mexiletine,3_extended,full,spline_ridge_tuned,fold permutation importance,Permutation (model-agnostic),age,4,0.1409,0.0641,higher value -> higher prediction (Spearman +1.00),10.0,0.1333
+Mexiletine,3_extended,full,spline_ridge_tuned,fold permutation importance,Permutation (model-agnostic),cognitive_function,5,0.1196,0.0544,higher value -> higher prediction (Spearman +1.00),5.0,0.0667
+Mexiletine,3_extended,full,spline_ridge_tuned,fold permutation importance,Permutation (model-agnostic),somatic_mosaicism_index,6,0.1188,0.054,higher value -> higher prediction (Spearman +0.31),8.0,0.0667
+Mexiletine,3_extended,full,spline_ridge_tuned,fold permutation importance,Permutation (model-agnostic),bmi,7,0.1161,0.0528,higher value -> higher prediction (Spearman +0.36),7.0,0.0667
+Mexiletine,3_extended,full,spline_ridge_tuned,fold permutation importance,Permutation (model-agnostic),pr_interval,8,0.113,0.0514,higher value -> higher prediction (Spearman +0.24),7.0,0.1333
+Mexiletine,3_extended,full,spline_ridge_tuned,fold permutation importance,Permutation (model-agnostic),family_history,9,0.1084,0.0493,levels by mean SHAP: No > Unknown > Yes,8.0,0.0
+Mexiletine,3_extended,full,spline_ridge_tuned,fold permutation importance,Permutation (model-agnostic),insulin_resistance,10,0.0916,0.0417,higher value -> lower prediction (Spearman -0.93),12.0,0.0
+Mexiletine,3_extended,full,spline_ridge_tuned,fold permutation importance,Permutation (model-agnostic),ck_level,11,0.083,0.0377,higher value -> lower prediction (Spearman -0.69),11.0,0.0
+Mexiletine,3_extended,full,spline_ridge_tuned,fold permutation importance,Permutation (model-agnostic),age_at_onset,12,0.0742,0.0337,higher value -> lower prediction (Spearman -0.71),9.0,0.0667
+Mexiletine,3_extended,full,spline_ridge_tuned,fold permutation importance,Permutation (model-agnostic),ctg_repeats,13,0.0711,0.0324,higher value -> lower prediction (Spearman -0.42),2.0,0.6667
+Mexiletine,3_extended,full,spline_ridge_tuned,fold permutation importance,Permutation (model-agnostic),smoking_status,14,0.0585,0.0266,levels by mean SHAP: Current > Former > Never,11.0,0.0
+Mexiletine,3_extended,full,spline_ridge_tuned,fold permutation importance,Permutation (model-agnostic),cataracts,15,0.0542,0.0246,levels by mean SHAP: No > Yes,12.0,0.0
+Mexiletine,3_extended,full,svr_tuned,fold permutation importance,Permutation (model-agnostic),myotonia_severity,1,0.5488,0.3378,higher value -> lower prediction (Spearman -1.00),1.0,1.0
+Mexiletine,3_extended,full,svr_tuned,fold permutation importance,Permutation (model-agnostic),age,2,0.135,0.0831,higher value -> higher prediction (Spearman +0.96),3.0,0.5333
+Mexiletine,3_extended,full,svr_tuned,fold permutation importance,Permutation (model-agnostic),sex,3,0.1344,0.0827,levels by mean SHAP: Female > Male,5.0,0.4
+Mexiletine,3_extended,full,svr_tuned,fold permutation importance,Permutation (model-agnostic),family_history,4,0.1137,0.07,levels by mean SHAP: No > Unknown > Yes,8.0,0.0667
+Mexiletine,3_extended,full,svr_tuned,fold permutation importance,Permutation (model-agnostic),insulin_resistance,5,0.0955,0.0588,higher value -> lower prediction (Spearman -0.91),11.0,0.1333
+Mexiletine,3_extended,full,svr_tuned,fold permutation importance,Permutation (model-agnostic),pr_interval,6,0.0911,0.0561,higher value -> higher prediction (Spearman +0.36),6.0,0.0667
+Mexiletine,3_extended,full,svr_tuned,fold permutation importance,Permutation (model-agnostic),smoking_status,7,0.0774,0.0476,levels by mean SHAP: Current > Never > Former,9.0,0.0
+Mexiletine,3_extended,full,svr_tuned,fold permutation importance,Permutation (model-agnostic),muscle_strength,8,0.0769,0.0473,higher value -> lower prediction (Spearman -0.27),11.0,0.0
+Mexiletine,3_extended,full,svr_tuned,fold permutation importance,Permutation (model-agnostic),somatic_mosaicism_index,9,0.0659,0.0405,higher value -> lower prediction (Spearman -0.42),7.0,0.0667
+Mexiletine,3_extended,full,svr_tuned,fold permutation importance,Permutation (model-agnostic),cognitive_function,10,0.0622,0.0383,higher value -> higher prediction (Spearman +0.80),8.0,0.1333
+Mexiletine,3_extended,full,svr_tuned,fold permutation importance,Permutation (model-agnostic),bmi,11,0.0604,0.0372,higher value -> higher prediction (Spearman +0.05),12.0,0.0667
+Mexiletine,3_extended,full,svr_tuned,fold permutation importance,Permutation (model-agnostic),ctg_repeats,12,0.0553,0.0341,higher value -> lower prediction (Spearman -0.88),2.0,0.5333
+Mexiletine,3_extended,full,svr_tuned,fold permutation importance,Permutation (model-agnostic),ck_level,13,0.0524,0.0323,higher value -> lower prediction (Spearman -0.71),10.0,0.0
+Mexiletine,3_extended,full,svr_tuned,fold permutation importance,Permutation (model-agnostic),age_at_onset,14,0.0297,0.0183,higher value -> lower prediction (Spearman -0.39),9.0,0.0
+Mexiletine,3_extended,full,svr_tuned,fold permutation importance,Permutation (model-agnostic),cataracts,15,0.0259,0.016,levels by mean SHAP: Yes > No,11.0,0.0
+Mexiletine,3_extended,reduced,svr_tuned,fold permutation importance,Permutation (model-agnostic),myotonia_severity,1,0.8252,0.9366,higher value -> lower prediction (Spearman -1.00),1.0,1.0
+Mexiletine,3_extended,reduced,svr_tuned,fold permutation importance,Permutation (model-agnostic),ctg_repeats,2,0.0559,0.0634,higher value -> lower prediction (Spearman -0.33),2.0,1.0

@@ -1,0 +1,7 @@
+arm,slot,model,family,cv_rmse_mean,cv_rmse_sd,test_rmse,test_r2,null_test_rmse
+Mexiletine,1,rf_tuned,Random forest,0.789,0.098,0.783,0.717,1.473
+Mexiletine,2,xgb_tuned,XGBoost,0.798,0.097,0.831,0.681,1.473
+Oligonucleotide,1,svr_tuned,SVR,1.514,0.153,1.703,0.143,1.847
+Oligonucleotide,2,rf_tuned,Random forest,1.534,0.16,1.659,0.187,1.847
+Tideglusib,1,xgb_tuned,XGBoost,2.053,0.334,2.329,0.526,3.389
+Tideglusib,2,rf_untuned,Random forest,2.092,0.353,2.387,0.502,3.389

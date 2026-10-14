@@ -1,0 +1,17 @@
+covariate,median_rank_full_set_models,1_full | full | rf_untuned,1_full | full | rf_tuned,1_full | full | xgb_untuned,1_full | full | xgb_tuned,2_reduced | reduced | rf_untuned,2_reduced | reduced | rf_tuned,2_reduced | reduced | xgb_untuned,2_reduced | reduced | xgb_tuned,3_extended | full | enet_tuned,3_extended | full | spline_ridge_tuned,3_extended | full | svr_tuned,3_extended | reduced | svr_tuned
+cognitive_function,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+muscle_strength,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,7.0,2.0,14.0,2.0
+pr_interval,3.0,3.0,3.0,3.0,3.0,3.0,3.0,3.0,3.0,3.0,5.0,3.0,4.0
+age,5.0,8.0,5.0,4.0,5.0,4.0,4.0,4.0,4.0,6.0,3.0,4.0,3.0
+myotonia_severity,5.0,5.0,4.0,5.0,4.0,,,,,8.0,7.0,2.0,
+somatic_mosaicism_index,9.0,9.0,10.0,12.0,8.0,,,,,4.0,8.0,16.0,
+ck_level,9.0,12.0,13.0,10.0,7.0,,,,,9.0,6.0,7.0,
+ctg_repeats,9.0,13.0,9.0,13.0,9.0,,,,,2.0,15.0,5.0,
+insulin_resistance,10.0,7.0,11.0,9.0,12.0,,,,,10.0,13.0,10.0,
+albumin,10.0,10.0,12.0,6.0,10.0,,,,,11.0,9.0,13.0,
+bmi,10.0,4.0,6.0,7.0,14.0,,,,,12.0,10.0,15.0,
+age_at_onset,11.0,11.0,7.0,11.0,11.0,,,,,5.0,11.0,11.0,
+family_history,12.0,6.0,8.0,8.0,13.0,,,,,14.0,14.0,12.0,
+cataracts,14.0,15.0,14.0,14.0,6.0,,,,,15.0,4.0,6.0,
+sex,15.0,14.0,15.0,16.0,15.0,,,,,13.0,16.0,8.0,
+smoking_status,16.0,16.0,16.0,15.0,16.0,,,,,16.0,12.0,9.0,

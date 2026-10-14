@@ -1,0 +1,34 @@
+arm,model,rank,covariate
+Mexiletine,Linear Regression,1,myotonia_severity
+Oligonucleotide,Linear Regression,1,ctg_repeats
+Oligonucleotide,Linear Regression,2,cognitive_function
+Oligonucleotide,Linear Regression,3,family_history
+Tideglusib,Linear Regression,1,cognitive_function
+Tideglusib,Linear Regression,2,age
+Tideglusib,Linear Regression,3,age_at_onset
+Tideglusib,Linear Regression,4,muscle_strength
+Tideglusib,Linear Regression,5,cataracts
+Mexiletine,Elastic Net,1,myotonia_severity
+Mexiletine,Random Forest,1,myotonia_severity
+Mexiletine,Random Forest,2,ctg_repeats
+Mexiletine,XGBoost,1,myotonia_severity
+Mexiletine,XGBoost,2,ctg_repeats
+Oligonucleotide,Elastic Net,1,ctg_repeats
+Oligonucleotide,Elastic Net,2,cognitive_function
+Oligonucleotide,Elastic Net,3,muscle_strength
+Oligonucleotide,Random Forest,1,ctg_repeats
+Oligonucleotide,Random Forest,2,myotonia_severity
+Oligonucleotide,Random Forest,3,insulin_resistance
+Oligonucleotide,Random Forest,4,somatic_mosaicism_index
+Oligonucleotide,XGBoost,1,ctg_repeats
+Oligonucleotide,XGBoost,2,bmi
+Oligonucleotide,XGBoost,3,myotonia_severity
+Oligonucleotide,XGBoost,4,somatic_mosaicism_index
+Tideglusib,Elastic Net,1,cognitive_function
+Tideglusib,Elastic Net,2,ctg_repeats
+Tideglusib,Random Forest,1,cognitive_function
+Tideglusib,Random Forest,2,muscle_strength
+Tideglusib,Random Forest,3,pr_interval
+Tideglusib,XGBoost,1,cognitive_function
+Tideglusib,XGBoost,2,muscle_strength
+Tideglusib,XGBoost,3,pr_interval
