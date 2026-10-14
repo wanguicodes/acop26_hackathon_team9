@@ -1,0 +1,2 @@
+model,RMSE,RMSE_ci_low,RMSE_ci_high,MAE,MAE_ci_low,MAE_ci_high,R2,R2_ci_low,R2_ci_high
+svr_tuned (reduced),1.748,1.39,2.066,1.455,1.133,1.773,0.097,-0.194,0.248

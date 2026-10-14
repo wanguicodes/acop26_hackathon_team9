@@ -1,0 +1,5 @@
+model,covariate,median_rmse_increase,q25,q75,frac_folds_positive,median_rank
+svr_tuned,ctg_repeats,0.1125,0.0844,0.1423,0.9333,1.0
+svr_tuned,myotonia_severity,0.0297,0.01,0.0559,0.8667,2.0
+svr_tuned,insulin_resistance,0.0058,-0.0005,0.0111,0.6667,3.0
+svr_tuned,somatic_mosaicism_index,0.0007,-0.0133,0.007,0.5333,3.0

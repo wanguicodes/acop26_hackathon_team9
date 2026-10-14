@@ -47,18 +47,25 @@ in this project.
 - Zero missing values in any of the 18 baseline covariates.
 - Outcome/responder columns populated only for a patient's assigned arm (NA elsewhere).
 - **Exact collinearity: `age = age_at_onset + disease_duration` for all 500 rows**
-  (not just correlated — identical). Drop `age` from every model; keep
-  `age_at_onset` and `disease_duration` separately (distinct clinical meaning).
+  (not just correlated — identical). **Team decision (Oct 13): keep `age` and
+  `age_at_onset`; drop `disease_duration`** (fully determined by the other two).
+  Note for interpretation: with both in a linear model, the `age` coefficient is the
+  effect of age at fixed onset age, i.e. effectively a disease-duration effect.
 - `albumin` is constant within the Mexiletine arm specifically (confirmed independently
   by Sharvari's `arm_config.py`) — drop it as a predictor for that arm, or rely on a
   zero-variance recipe step (`step_zv()`) to catch it automatically.
 - `phenotype` split (61.8%/20.0%/18.2%) matches kickoff slide 40 exactly.
 
-## Covariates (18, minus `age` = 17 used)
-- Numeric (12 used): ctg_repeats, somatic_mosaicism_index, age_at_onset, disease_duration,
+## Covariates (18, minus `disease_duration` and `phenotype` = 16 used)
+Team decision (Oct 13), implemented identically in `wangui/linear_regression.R` and
+`sharvari/arm_config.py`:
+- Numeric (12 used): ctg_repeats, somatic_mosaicism_index, age, age_at_onset,
   myotonia_severity, muscle_strength, pr_interval, cognitive_function, ck_level,
   insulin_resistance, albumin, bmi
-- Categorical (5): phenotype (3), sex (2), family_history (3), cataracts (2), smoking_status (3)
+- Categorical (4 used): sex (2), family_history (3), cataracts (2), smoking_status (3)
+- Excluded: `disease_duration` (= age − age_at_onset) and `phenotype` (onset-age bands,
+  overlapping with age_at_onset).
+- Mexiletine additionally drops `albumin` (constant in that arm) → 15 covariates there.
 
 ## Workflow rules
 1. Use the shared split (`data/derived/split/*.csv`) — do not re-split or use a
@@ -102,19 +109,24 @@ code. Summary:
 - This reference implementation already ran end-to-end for all 3 arms and produced
   real (if simple) baseline results. It's a fallback, not the final answer — anyone's
   own better methodology should replace it.
+- **Out of date:** the reference workflow was built under the old covariate rule (drop
+  `age`, keep `disease_duration` + `phenotype`). Rerun it with the agreed 16-covariate set
+  above so the scoreboard compares methods on the same covariates.
 
 ## Team repo state — division of labor
-- **wangui/**: shared split + full-dataset EDA figures/tables.
+- **wangui/**: shared split + full-dataset EDA figures/tables + stepwise linear regression
+  per arm (`wangui/linear_regression.R`; partial F-tests, training-only metrics written to
+  `data/derived/linear_regression_training_*.csv`, per-arm outputs in
+  `wangui/linear_regression/`). Test-set predictions not yet written to `deliverable/results/`.
 - **inez/**: EDA by arm (boxplots, within-arm correlation heatmaps) + `findings_summary.Rmd`/html.
 - **natiriva_code/**: more EDA + univariate screening (Mann-Whitney, Spearman). Note:
   her script reads `data/dm1_clinical_trial_dataset.csv` (should be `data/source/...`) —
   a path bug on her end, not ours to fix.
 - **sharvari/**: ML pipeline framework (Python/scikit-learn + xgboost) — nested CV,
   Random Forest + XGBoost vs. a dummy baseline, SHAP, noise-probe columns for signal
-  validation. Well-built, matches our metrics/leakage discipline. As of last check,
-  the notebooks had not yet been executed (0 run cells) — no committed outputs yet.
-- **Gap at last check: no one but our reference implementation has produced an
-  interpretable covariate model's actual numbers.** Worth checking on.
+  validation. Well-built, matches our metrics/leakage discipline. Executed for all 3 arms
+  (full run, not quick run); outputs committed in `sharvari/outputs/<arm>/`
+  (`test_metrics.csv`, `test_predictions.csv`, `shap_ranking.csv`, CV summaries).
 
 ## Pre-submission checklist (from kickoff slide 49)
 - [ ] Code is complete and reproduces all reported results end to end.
@@ -151,6 +163,8 @@ code. Summary:
   auto-discovery for teammates working elsewhere in the repo.
 - Pushed directly to `main`, matching how the rest of the team has been working
   (no branch/PR workflow in use).
+- Covariate set changed (Oct 13, team decision): keep `age` + `age_at_onset`, drop
+  `disease_duration` and `phenotype`. Supersedes the earlier "drop `age`" rule.
 
 ## AI-use log (for disclosure slide)
 - Posit Assistant (Claude, mixed model tiers — used for: summarizing the kickoff deck;

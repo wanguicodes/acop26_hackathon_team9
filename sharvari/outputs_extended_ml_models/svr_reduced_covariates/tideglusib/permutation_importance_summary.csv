@@ -1,0 +1,5 @@
+model,covariate,median_rmse_increase,q25,q75,frac_folds_positive,median_rank
+svr_tuned,cognitive_function,0.8182,0.7501,1.0592,1.0,1.0
+svr_tuned,muscle_strength,0.2765,0.1859,0.3708,1.0,2.0
+svr_tuned,age,0.0919,0.0395,0.1615,0.8,3.0
+svr_tuned,pr_interval,0.048,0.0185,0.1058,0.8667,4.0

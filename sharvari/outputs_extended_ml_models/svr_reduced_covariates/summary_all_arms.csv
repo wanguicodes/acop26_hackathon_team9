@@ -1,0 +1,19 @@
+arm,model,cv_RMSE_mean,cv_RMSE_sd,paired_diff_vs_reduced_tree,folds_better_than_reduced_tree,best_by_cv,svr_reduced_test_RMSE,svr_reduced_test_R2
+Mexiletine,null (reduced),1.281,0.12,0.513,0,False,0.802,0.703
+Mexiletine,rf_tuned (reduced),0.768,0.096,0.0,0,False,0.802,0.703
+Mexiletine,xgb_tuned (reduced),0.768,0.11,-0.0,9,False,0.802,0.703
+Mexiletine,svr_tuned (reduced),0.751,0.118,-0.017,8,True,0.802,0.703
+Mexiletine,rf_tuned (full),0.789,0.098,0.021,4,False,0.802,0.703
+Mexiletine,svr_tuned (full),0.819,0.097,0.051,5,False,0.802,0.703
+Oligonucleotide,null (reduced),1.622,0.148,0.09,2,False,1.748,0.097
+Oligonucleotide,rf_tuned (reduced),1.532,0.14,0.0,0,False,1.748,0.097
+Oligonucleotide,xgb_tuned (reduced),1.539,0.143,0.007,8,False,1.748,0.097
+Oligonucleotide,svr_tuned (reduced),1.526,0.172,-0.006,10,False,1.748,0.097
+Oligonucleotide,rf_tuned (full),1.534,0.16,0.001,6,False,1.748,0.097
+Oligonucleotide,svr_tuned (full),1.514,0.153,-0.018,11,True,1.748,0.097
+Tideglusib,null (reduced),3.028,0.195,1.054,0,False,2.709,0.359
+Tideglusib,rf_tuned (reduced),2.004,0.299,0.029,7,False,2.709,0.359
+Tideglusib,xgb_tuned (reduced),1.975,0.283,0.0,0,True,2.709,0.359
+Tideglusib,svr_tuned (reduced),2.266,0.249,0.292,1,False,2.709,0.359
+Tideglusib,xgb_tuned (full),2.053,0.334,0.078,4,False,2.709,0.359
+Tideglusib,svr_tuned (full),2.592,0.305,0.617,0,False,2.709,0.359

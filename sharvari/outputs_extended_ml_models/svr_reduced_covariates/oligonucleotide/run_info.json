@@ -1,0 +1,47 @@
+{
+  "arm": "Oligonucleotide",
+  "outcome": "qmt_change_26wk",
+  "covariates": [
+    "ctg_repeats",
+    "myotonia_severity",
+    "somatic_mosaicism_index",
+    "insulin_resistance"
+  ],
+  "covariate_set": "reduced (SHAP-informed, same as outputs_reduced_covariates)",
+  "selected_model_by_cv": "svr_tuned (full)",
+  "seed": 2026,
+  "cv": {
+    "outer_splits": 5,
+    "outer_repeats": 3,
+    "inner_splits": 5,
+    "final_splits": 5,
+    "final_repeats": 2,
+    "n_bins": 4
+  },
+  "n_boot": 2000,
+  "grid": {
+    "model__regressor__C": [
+      0.3,
+      1,
+      3,
+      10,
+      30
+    ],
+    "model__regressor__gamma": [
+      "scale",
+      0.01,
+      0.03,
+      0.1
+    ],
+    "model__regressor__epsilon": [
+      0.05,
+      0.1,
+      0.3
+    ]
+  },
+  "fold_identity_checked": true,
+  "caveats": [
+    "Covariates chosen on full training set: CV optimistic (equally for reduced trees).",
+    "Test set used by earlier runs: select on CV."
+  ]
+}
