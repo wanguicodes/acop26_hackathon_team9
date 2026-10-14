@@ -155,15 +155,15 @@ r2_labels <- stats |>
   mutate(x = lo + 0.03 * (hi - lo),
          y = hi - (as.integer(model_label) - 1) * 0.08 * (hi - lo))
 
-pred_obs_plot <- ggplot(plot_df, aes(observed, predicted, colour = model_label)) +
+pred_obs_plot <- ggplot(plot_df, aes(observed, predicted, colour = model_label, shape = model_label)) +
   geom_blank(data = panel_lims, aes(x = val, y = val), inherit.aes = FALSE) +
   geom_abline(slope = 1, intercept = 0, colour = "grey40", linetype = "dashed") +
-  geom_point(alpha = 0.7, size = 1.8) +
+  geom_point(alpha = 0.7, size = 3) +
   geom_text(data = r2_labels, aes(x = x, y = y, label = label),
             hjust = 0, vjust = 1, size = 3.5, fontface = "bold", show.legend = FALSE) +
   facet_wrap(~panel, nrow = 1, scales = "free") +
   scale_colour_manual(values = model_colours) +
-  labs(x = "Observed", y = "Predicted", colour = NULL,
+  labs(x = "Observed", y = "Predicted", colour = NULL, shape = NULL,
        title = "Test set: predicted vs. observed, by treatment arm and model",
        subtitle = "Dashed line = line of unity (predicted = observed); n = 35 test patients per arm") +
   theme_bw(base_size = 11) +

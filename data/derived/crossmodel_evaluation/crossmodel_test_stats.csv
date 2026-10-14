@@ -1,0 +1,10 @@
+treatment_arm,outcome,model,model_label,n,RMSE,MAE,R_squared
+Mexiletine,myotonia_change_12wk,linear_regression,Linear regression (stepwise),35,0.8125970470748881,0.5921001914952426,0.6955184452856052
+Mexiletine,myotonia_change_12wk,rf_tuned,Random forest (tuned),35,0.7831671357368375,0.5717772939231228,0.7171739432981441
+Mexiletine,myotonia_change_12wk,xgb_tuned,XGBoost (tuned),35,0.8311358523980705,0.59547961562020435,0.6814669189876575
+Oligonucleotide,qmt_change_26wk,linear_regression,Linear regression (stepwise),35,1.7441221861513623,1.4471091859316536,0.10107877308660795
+Oligonucleotide,qmt_change_26wk,rf_tuned,Random forest (tuned),35,1.658974385847858,1.3673806256223555,0.1867067196172777
+Oligonucleotide,qmt_change_26wk,xgb_tuned,XGBoost (tuned),35,1.6633320193556438,1.367687112740108,0.1824285479426484
+Tideglusib,tideglusib_composite,linear_regression,Linear regression (stepwise),35,2.774130566192091,2.2421753783959097,0.32766438774661355
+Tideglusib,tideglusib_composite,rf_tuned,Random forest (tuned),35,2.3491348836512778,1.9895714285714288,0.5178876813644149
+Tideglusib,tideglusib_composite,xgb_tuned,XGBoost (tuned),35,2.3291328584027586,1.8674043226242065,0.5260627491968242
